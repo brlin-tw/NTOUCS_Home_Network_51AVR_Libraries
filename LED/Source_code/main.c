@@ -38,13 +38,13 @@ void main(void){
 	while(TRUE){
 		ledDisplayValue(0xFF);
 		delay(20000);
-		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP);
+		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
 		delay(20000);
-		ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN);
+		ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN, delay, 10000);
 		delay(20000);
-		ledRotateTwoWay(LED_ROTATE_UP);
+		ledRotateTwoWay(LED_ROTATE_UP, delay, 10000);
 		delay(20000);
-		ledRotateTwoWay(LED_ROTATE_DOWN);
+		ledRotateTwoWay(LED_ROTATE_DOWN, delay, 10000);
 		delay(20000);
 	}
 	

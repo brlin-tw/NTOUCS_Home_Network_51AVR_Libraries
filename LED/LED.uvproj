@@ -166,7 +166,7 @@
             <DriverSelection>-1</DriverSelection>
           </Flash1>
           <Flash2></Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <Target51>
@@ -373,6 +373,16 @@
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source_code\LED\LED.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Delay</GroupName>
+          <Files>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source_code\Delay\Delay.c</FilePath>
             </File>
           </Files>
         </Group>

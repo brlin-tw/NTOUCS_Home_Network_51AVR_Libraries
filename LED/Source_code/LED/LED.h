@@ -43,6 +43,7 @@
 			/* 顯示數值至 LED
 				 　value
 				 　　要顯示的 8 位元數值，LOGIC_HIGH 代表發光 */
+			
 		/* 輪轉(rotate)相關函式 */
 			#define LED_ROTATE_UP 1
 				/* 往高位數輪轉 */
@@ -50,14 +51,22 @@
 				/* 往低位數輪轉 */
 			void ledRotateOneWay(
 				/* 讓 LED 從一邊亮到另外一邊 */
-				unsigned char initial_position, 
-					/* 初始位置 */
+				unsigned char initial_position
+					/* 初始位置 */, 
 				bit direction
-					/* 輪動方向 */);
+					/* 輪動方向 */, 
+				void (*delay)(unsigned)
+					/* 用來當作輪動周期的時間延遲函式 */, 
+				unsigned interval
+					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
 			void ledRotateTwoWay(
 				/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
 				bit initial_direction
-					/* 第一次輪轉的轉動方向 */);
+					/* 第一次輪轉的轉動方向 */, 
+				void (*delay)(unsigned)
+					/* 用來當作輪動周期的時間延遲函式 */, 
+				unsigned interval
+					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
 				
 	/*||||| 全域變數 | Global Variables |||||*/
 	

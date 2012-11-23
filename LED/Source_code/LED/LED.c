@@ -7,8 +7,6 @@ LED.c
 		/* led constant definition */
 	#include "../Project_configurations/Common_definitions.h"
 		/* for C true */
-	#include "../Delay/Delay.h"
-		/* for delay procedure */
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -30,7 +28,11 @@ void ledRotateOneWay(
 	unsigned char initial_position, 
 		/* 初始位置 */
 	bit direction
-		/* 輪動方向 */){
+		/* 輪動方向 */, 
+	void (*delay)(unsigned)
+		/* 用來當作輪動周期的時間延遲函式 */, 
+	unsigned interval
+		/* 輪動週期（從一個 LED 跳到下一個 LED 的 tick 數）*/ ){
 	/* set initial position : use initial_position as led_position to save memory */
 		#define led_position initial_position
 
@@ -42,7 +44,7 @@ void ledRotateOneWay(
 				}
 			
 			ledDisplayValue(led_position);
-			delay(20000);
+			delay(interval);
 				
 			/* shift 1 bit */
 				if(direction == LED_ROTATE_UP){
@@ -56,14 +58,22 @@ void ledRotateOneWay(
 void ledRotateTwoWay(
 	/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
 	bit initial_direction
-		/* 第一次輪轉的轉動方向 */){
+		/* 第一次輪轉的轉動方向 */, 
+	void (*delay)(unsigned)
+		/* 用來當作輪動周期的時間延遲函式 */, 
+	unsigned interval
+		/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */){
 	ledRotateOneWay(
 		(initial_direction == LED_ROTATE_UP) ? 
 			LED_LOWEST : LED_HIGHEST, 
-		initial_direction);
+		initial_direction, 
+		delay, 
+		interval);
 	ledRotateOneWay(
 		(initial_direction == LED_ROTATE_UP) ?
 			LED_HIGHEST / 2 : LED_LOWEST * 2, 
-		~initial_direction);
+		~initial_direction, 
+		delay, 
+		interval);
 	return;
 }
