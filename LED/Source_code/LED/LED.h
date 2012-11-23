@@ -30,8 +30,9 @@
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 		#include <reg51.h>
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
-		#define LED P1
-			/* LED is connected from P1 */
+		/* port definitions */
+			#define LED P1
+				/* LED is connected from P1 */
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
