@@ -45,6 +45,7 @@ temp/
 #排除建構出來的Object code檔案
 *.o
 *.obj
+Object_code/
 
 #因為可執行檔可能包含直譯語言所以不排除可執行檔目錄
 ![Bb]in/
@@ -278,6 +279,7 @@ modules.order
 #Keil μVision 整合式開發環境排除規則
 *.uvgui.*
 *.uvopt
+*.M51
 
 #我自己的喜好設定
 	#Resources目錄底下的東西為相關資源不要排除掉
