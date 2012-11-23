@@ -16,7 +16,7 @@ main.c
 	#include "LED/LED.h"
 
 /* for delay procedure */
-	#include "Delay/Delay.h"
+	#include "Flow_of_control/Delay.h"
 	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
