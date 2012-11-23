@@ -14,7 +14,7 @@ LED.c
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
-void ledDisplay(unsigned char value){
+void ledDisplayValue(unsigned char value){
 	/* 實際上 LED 將邏輯 LOW 訊號視為發光，所以將反向之後再填進去 */
 	LED = ~value;
 	return;

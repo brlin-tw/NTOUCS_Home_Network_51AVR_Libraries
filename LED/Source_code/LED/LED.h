@@ -34,7 +34,7 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
-		void ledDisplay(unsigned char value);
+		void ledDisplayValue(unsigned char value);
 			/* 顯示數值至 LED
 				 　value
 				 　　要顯示的 8 位元數值，LOGIC_HIGH 代表發光 */

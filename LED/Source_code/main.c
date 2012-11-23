@@ -33,7 +33,7 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
-		ledDisplay(0xFF);
+		ledDisplayValue(0xFF);
 		
 	}
 	
