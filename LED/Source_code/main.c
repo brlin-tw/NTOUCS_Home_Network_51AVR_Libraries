@@ -4,17 +4,20 @@ main.c
 */
 /*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /* Standard io library definition? */
-#include <stdio.h>
+	#include <stdio.h>
 
 /* Definitions of 8051 register constants */
-#include <REG51.h>
+	#include <REG51.h>
 
 /* Common definitions */
-#include "Project_configurations/Common_definitions.h"
+	#include "Project_configurations/Common_definitions.h"
 
 /* for LED operations */
-#include "LED/LED.h"
+	#include "LED/LED.h"
 
+/* for delay procedure */
+	#include "Delay/Delay.h"
+	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -34,7 +37,15 @@ void main(void){
 	/* main loop */
 	while(TRUE){
 		ledDisplayValue(0xFF);
-		
+		delay(20000);
+		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP);
+		delay(20000);
+		ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN);
+		delay(20000);
+		ledRotateTwoWay(LED_ROTATE_UP);
+		delay(20000);
+		ledRotateTwoWay(LED_ROTATE_DOWN);
+		delay(20000);
 	}
 	
 	return;

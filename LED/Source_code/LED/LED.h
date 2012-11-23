@@ -33,6 +33,9 @@
 		/* port definitions */
 			#define LED P1
 				/* LED is connected from P1 */
+		/* LED position definitions */
+			#define LED_HIGHEST 0x80
+			#define LED_LOWEST 0x1
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
@@ -40,6 +43,22 @@
 			/* 顯示數值至 LED
 				 　value
 				 　　要顯示的 8 位元數值，LOGIC_HIGH 代表發光 */
+		/* 輪轉(rotate)相關函式 */
+			#define LED_ROTATE_UP 1
+				/* 往高位數輪轉 */
+			#define LED_ROTATE_DOWN 0
+				/* 往低位數輪轉 */
+			void ledRotateOneWay(
+				/* 讓 LED 從一邊亮到另外一邊 */
+				unsigned char initial_position, 
+					/* 初始位置 */
+				bit direction
+					/* 輪動方向 */);
+			void ledRotateTwoWay(
+				/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
+				bit initial_direction
+					/* 第一次輪轉的轉動方向 */);
+				
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus
