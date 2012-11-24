@@ -1,6 +1,6 @@
 /* Common_definitions.h
 程式名稱 | Program name
-	Common definitions of 8051 C program
+	Common definitions of NTOUCS Home Network W78E58B 8051 board C program
 更新紀錄 | Changelog
 	Changelog is now stored on GitHub(http://www.github.com)
 已知問題 | Known issues
@@ -10,12 +10,12 @@
 著作權宣告 | Copyright declaration
 	Copyright 2012 林博仁(Henry Lin, pika1021@gmail.com)
 智慧財產授權條款：
-	Common definitions of 8051 C program is part of Project_configurations
-	Project_configurations is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+	Common definitions of NTOUCS Home Network W78E58B 8051 board C program is part of NTOUCS_Home_Network_W78E58B_board_libraries
+	NTOUCS_Home_Network_W78E58B_board_libraries is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 	
-	Project_configurations is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+	NTOUCS_Home_Network_W78E58B_board_libraries is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
 	
-	You should have received a copy of the GNU Lesser General Public License along with Project_configurations.  If not, see <http://www.gnu.org/licenses/>.
+	You should have received a copy of the GNU Lesser General Public License along with NTOUCS_Home_Network_W78E58B_board_libraries.  If not, see <http://www.gnu.org/licenses/>.
 */
 /* include guard：避免同一個header檔案被include第二次 */
 #ifndef COMMON_DEFINITIONS_H_INCLUDED
