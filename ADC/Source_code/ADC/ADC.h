@@ -18,8 +18,8 @@
 	You should have received a copy of the GNU Lesser General Public License along with NTOU_W78E58B_libraries.  If not, see <http://www.gnu.org/licenses/>.
 */
 /* include guard：避免同一個 header 檔案被 include 第二次 */
-#ifndef _H_INCLUDED
-	#define _H_INCLUDED
+#ifndef ADC_H_INCLUDED
+	#define ADC_H_INCLUDED
 	/* 如果是 C++ 編譯器則停用 C++ 特有的函式名稱 mangling*/
 	#ifdef __cplusplus
 		extern "C"{
@@ -44,4 +44,4 @@
 	#ifdef __cplusplus
 		}
 	#endif
-#endif /* _H_INCLUDED */
+#endif /* ADC_H_INCLUDED */
