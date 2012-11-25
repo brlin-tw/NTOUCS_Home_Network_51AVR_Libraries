@@ -30,9 +30,7 @@
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
-		/* address map */
-			sbit adc_read_bar_cs_bar = P2^6;
-		#define ADC_SOURCE P0
+		
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/

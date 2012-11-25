@@ -347,12 +347,27 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>Main_program</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source_code\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Project_configurations</GroupName>
+          <Files>
+            <File>
+              <FileName>Common_definitions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Project_configurations\Common_definitions.h</FilePath>
+            </File>
+            <File>
+              <FileName>Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Project_configurations\Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h</FilePath>
             </File>
           </Files>
         </Group>
