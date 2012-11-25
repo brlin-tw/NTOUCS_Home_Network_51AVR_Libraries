@@ -12,11 +12,15 @@ main.c
 	/* Common definitions */
 		#include "Project_configurations/Common_definitions.h"
 
+	/* for signals definitions used by initialize() */
+		#include "Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+		
 	/* Test target */
 		#include "ADC/ADC.h"
 	
 	/* for LED control procedures*/
 		#include "LED/LED.h"
+	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/

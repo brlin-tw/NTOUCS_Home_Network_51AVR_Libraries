@@ -29,10 +29,8 @@
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 		#include <reg51.h>
+		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
-		/* port definitions */
-			#define LED P1
-				/* LED is connected from P1 */
 		/* LED position definitions */
 			#define LED_HIGHEST 0x80
 			#define LED_LOWEST 0x1
