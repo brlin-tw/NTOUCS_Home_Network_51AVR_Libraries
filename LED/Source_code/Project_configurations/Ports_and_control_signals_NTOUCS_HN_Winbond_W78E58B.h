@@ -28,8 +28,8 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-		/* macro definition of 8051 */
-			#include <reg51.h>
+		/* register alias definition of 8052 */
+			#include <reg52.h>
 		
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* 8位元 LED */
@@ -41,6 +41,7 @@
 			sbit switch6 = P3^5;
 			
 		/* 類比／數位轉換器(ADC) */
+			#define ADC P0
 			sbit adc_read_bar_cs_bar = P2^6;
 			
 		/* 指撥開關(DIP) */
