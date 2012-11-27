@@ -24,9 +24,6 @@ main.c
 	void initialize8051();
 
 /*||||| 全域變數 | Global Variables |||||*/
-	unsigned char led_position;
-		/* 不知道為什麼放在 main() 裏面會建構失敗orz
-			 0000_0001 */
 	
 /*||||| 主要程式碼 | Main Code |||||*/
 /* 程式進入點 | Program entry point
