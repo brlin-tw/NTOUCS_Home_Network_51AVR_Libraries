@@ -28,7 +28,6 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-		#include <reg51.h>
 		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* LED position definitions */

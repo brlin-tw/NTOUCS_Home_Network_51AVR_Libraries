@@ -6,9 +6,6 @@ main.c
 	/* Standard io library definition? */
 		#include <stdio.h>
 
-	/* Definitions of 8051 register constants */
-		#include <REG51.h>
-
 	/* Common definitions */
 		#include "Project_configurations/Common_definitions.h"
 
