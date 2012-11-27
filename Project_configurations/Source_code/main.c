@@ -6,9 +6,6 @@
 /* Standard io library definition? */
 #include <stdio.h>
 
-/* Definitions of 8051 register constants */
-#include <REG51.h>
-
 /* Test object */
 #include "Project_configurations/Common_definitions.h"
 
@@ -17,8 +14,8 @@
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
-	/* 初始化8051硬體的函式 */
-	void initialize8051();
+	/* 初始化 W78E58B 硬體的函式 */
+	void initializeW78E58B();
 
 /*||||| 全域變數 | Global Variables |||||*/
 
@@ -26,7 +23,7 @@
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	initialize8051();
+	initializeW78E58B();
 	
 	/* main loop */
 	while(TRUE){
@@ -37,7 +34,7 @@ void main(void){
 	return;
 }
 
-void initialize8051(){
+void initializeW78E58B(){
 	
 	return;
 }

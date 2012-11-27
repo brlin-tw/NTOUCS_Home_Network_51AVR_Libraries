@@ -28,8 +28,8 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-		/* macro definition of 8051 */
-			#include <reg51.h>
+		/* register alias definition of 8052 */
+			#include <reg52.h>
 		
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* 8位元 LED */
