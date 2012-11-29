@@ -46,7 +46,9 @@
 				/* 開啟 ADC 至 bus 輸出的訊號 */
 				
 		/* 指撥開關(DIP) */
-			sbit dip_ground = P2^5;
+			#define DIP_SW P0
+			sbit dip_sw_chip_select_bar = P2^5;
+				/* 開啟 DIP 開關至 bus 輸出的訊號 */
 		
 		/* 液晶螢幕(LCD) */
 			sbit lcd_enable = P2^2;
