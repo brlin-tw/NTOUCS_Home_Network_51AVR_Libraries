@@ -28,7 +28,9 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-		/* register alias definition of 8052 */
+		/* Special Function Registers(SFR) definitions of generic 8052 microcontroller
+		   　Cx51 User's Guide: Special Function Registers
+		   　http://www.keil.com/support/man/docs/c51/c51_le_sfrs.htm */
 			#include <reg52.h>
 		
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
