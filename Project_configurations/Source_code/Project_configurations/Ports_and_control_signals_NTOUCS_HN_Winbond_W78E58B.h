@@ -51,7 +51,7 @@
 				
 		/* DIP 封裝指撥開關 */
 			#define DIP_SW P0
-			sbit dip_sw_chip_select_bar = P2^5;
+			sbit dip_sw_chip_enable_bar = P2^5;
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
 		
 		/* 液晶螢幕(LCD) */
@@ -61,7 +61,11 @@
 				/* LCD 暫存器選擇信號 */
 			sbit lcd_read_write_bar = P2^1;
 				/* LCD 暫存器讀寫 */	
-				
+		
+		/* 7 段顯示器 */
+			
+		/* RS-232 連接埠定義 */
+			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
