@@ -379,6 +379,11 @@
               <FileType>1</FileType>
               <FilePath>.\Source_code\LED\LED.c</FilePath>
             </File>
+            <File>
+              <FileName>LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\LED\LED.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -388,6 +393,21 @@
               <FileName>Delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source_code\Flow_of_control\Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Flow_of_control\Delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>Hang.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source_code\Flow_of_control\Hang.c</FilePath>
+            </File>
+            <File>
+              <FileName>Hang.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Flow_of_control\Hang.h</FilePath>
             </File>
           </Files>
         </Group>
