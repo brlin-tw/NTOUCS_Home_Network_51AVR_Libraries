@@ -39,6 +39,7 @@
 			#define LED P1
 		
 		/* 按鈕開關 */
+			sbit switch3 = P3^2;
 			sbit switch4 = P3^3;
 			sbit switch5 = P3^4;
 			sbit switch6 = P3^5;
