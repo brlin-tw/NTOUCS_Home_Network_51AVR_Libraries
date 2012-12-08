@@ -14,6 +14,9 @@ LED.c
 /*||||| 函式雛型 | Function Prototypes |||||*/
 
 /*||||| 全域變數 | Global Variables |||||*/
+	code unsigned char led_position[8] = {
+		LED0, LED1, LED2, LED3, LED4, LED5, LED6, LED7
+	};
 
 /*||||| 主要程式碼 | Main Code |||||*/
 void ledDisplayValue(unsigned char value){

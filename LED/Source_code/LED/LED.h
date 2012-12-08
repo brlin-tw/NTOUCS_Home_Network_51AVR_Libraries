@@ -97,7 +97,9 @@
 					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
 				
 	/*||||| 全域變數 | Global Variables |||||*/
-	
+		/* 讓 LED 位置可以直接透過陣列索引值變數取得 */
+			extern code unsigned char led_position[8];
+			
 	#ifdef __cplusplus
 		}
 	#endif
