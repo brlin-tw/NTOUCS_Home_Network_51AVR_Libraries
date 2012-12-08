@@ -15,6 +15,9 @@ main.c
 /* for delay procedure */
 	#include "Flow_of_control/Delay.h"
 	
+/* hang procedure */
+	#include "Flow_of_control/Hang.h"
+	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -29,20 +32,50 @@ main.c
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
+	unsigned char i;
 	initialize();
 	
 	/* main loop */
 	while(TRUE){
+
+		ledDisplayValue(LED_NONE);
+		delay(20000);		
+		ledDisplayValue(LED_ALL);
+		delay(20000);
+		ledDisplayValue(LED_NONE);
+		delay(20000);		
+		ledDisplayValue(LED_ALL);
+		delay(20000);
+#if 0
+		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
 		ledDisplayValue(0xFF);
 		delay(20000);
-		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
-		delay(20000);
+		
 		ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN, delay, 10000);
+		ledDisplayValue(0xFF);
 		delay(20000);
+		
 		ledRotateTwoWay(LED_ROTATE_UP, delay, 10000);
+		ledDisplayValue(0xFF);
 		delay(20000);
+		
 		ledRotateTwoWay(LED_ROTATE_DOWN, delay, 10000);
+		ledDisplayValue(0xFF);
 		delay(20000);
+
+		for(i = 0; i <= 7; ++i){
+			ledDisplayValue(led_position[i]);
+			delay(20000);
+		}
+#endif
+		
+		while(TRUE){
+			ledDisplayValue(LED_EVEN);
+			delay(20000);
+			ledDisplayValue(LED_ODD);
+			delay(20000);
+		}
+		hangForever();
 	}
 	
 	return;
