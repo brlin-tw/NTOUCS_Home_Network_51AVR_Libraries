@@ -49,7 +49,21 @@
 			/* 0000_0001b */
 				#define LED0 0x01
 				#define LED_LOWEST 0x01
-				
+		
+		/* 多重 LED pattern 定義 */
+			/* 1111_1111b */
+				#define LED_ALL 0xFF
+			/* 0000_0000b */
+				#define LED_NONE 0x00
+			/* 1111_0000b */
+				#define LED_HALF_UP 0xF0
+			/* 0000_1111b */
+				#define LED_HALF_DOWN 0x0F
+			/* 1010_1010b */
+				#define LED_ODD 0xAA
+			/* 0101_0101b */
+				#define LED_EVEN 0x55
+		
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
