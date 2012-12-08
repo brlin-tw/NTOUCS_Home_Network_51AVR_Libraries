@@ -34,20 +34,21 @@
 			#include <reg52.h>
 		
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
-		/* 8位元 LED */
+		/* 8 位元 LED
+			 　連接至 W78E58B 的 P1 連接埠*/
 			#define LED P1
 		
-		/* 按鈕 */
+		/* 按鈕開關 */
 			sbit switch4 = P3^3;
 			sbit switch5 = P3^4;
 			sbit switch6 = P3^5;
 			
-		/* 類比／數位轉換器(ADC) */
+		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
 			sbit adc_read_bar_chip_select_bar = P2^6;
 				/* 開啟 ADC 至 bus 輸出的訊號 */
 				
-		/* 指撥開關(DIP) */
+		/* DIP 封裝指撥開關 */
 			#define DIP_SW P0
 			sbit dip_sw_chip_select_bar = P2^5;
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
