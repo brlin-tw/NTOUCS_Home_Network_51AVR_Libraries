@@ -31,22 +31,25 @@
 		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* LED position definitions */
-			#define LED_HIGHEST 0x80
-				/* 1000_0000b */
-			#define LED_SEVENTH 0x40
-				/* 0100_0000b */
-			#define LED_SIXTH 0x20
-				/* 0010_0000b */
-			#define LED_FIFTH 0x10
-				/* 0001_0000b */
-			#define LED_FOURTH 0x08
-				/* 0000_1000b */
-			#define LED_THIRD 0x04
-				/* 0000_0100b */
-			#define LED_SECOND 0x02	
-				/* 0000_0010b */		
-			#define LED_LOWEST 0x01
-				/* 0000_0001b */
+			/* 1000_0000b */
+				#define LED7 0x80
+				#define LED_HIGHEST 0x80			
+			/* 0100_0000b */
+				#define LED6 0x40
+			/* 0010_0000b */
+				#define LED5 0x20
+			/* 0001_0000b */
+				#define LED4 0x10
+			/* 0000_1000b */
+				#define LED3 0x08
+			/* 0000_0100b */
+				#define LED2 0x04
+			/* 0000_0010b */	
+				#define LED1 0x02	
+			/* 0000_0001b */
+				#define LED0 0x01
+				#define LED_LOWEST 0x01
+				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
