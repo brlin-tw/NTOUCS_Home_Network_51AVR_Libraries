@@ -32,7 +32,21 @@
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* LED position definitions */
 			#define LED_HIGHEST 0x80
-			#define LED_LOWEST 0x1
+				/* 1000_0000b */
+			#define LED_SEVENTH 0x40
+				/* 0100_0000b */
+			#define LED_SIXTH 0x20
+				/* 0010_0000b */
+			#define LED_FIFTH 0x10
+				/* 0001_0000b */
+			#define LED_FOURTH 0x08
+				/* 0000_1000b */
+			#define LED_THIRD 0x04
+				/* 0000_0100b */
+			#define LED_SECOND 0x02	
+				/* 0000_0010b */		
+			#define LED_LOWEST 0x01
+				/* 0000_0001b */
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
@@ -40,7 +54,7 @@
 			/* 顯示數值至 LED
 				 　value
 				 　　要顯示的 8 位元數值，LOGIC_HIGH 代表發光 */
-			
+
 		/* 輪轉(rotate)相關函式 */
 			#define LED_ROTATE_UP 1
 				/* 往高位數輪轉 */
