@@ -46,7 +46,7 @@
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
-			sbit adc_read_bar_chip_select_bar = P2^6;
+			sbit adc_chip_select_bar_read_bar = P2^6;
 				/* 開啟 ADC 至 bus 輸出的訊號 */
 				
 		/* DIP 封裝指撥開關 */
