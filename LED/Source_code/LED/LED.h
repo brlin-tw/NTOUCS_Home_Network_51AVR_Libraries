@@ -94,7 +94,8 @@
 				void (*delay)(unsigned)
 					/* 用來當作輪動周期的時間延遲函式 */, 
 				unsigned interval
-					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
+					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */
+			);
 			void ledRotateTwoWay(
 				/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
 				bit initial_direction
@@ -102,7 +103,8 @@
 				void (*delay)(unsigned)
 					/* 用來當作輪動周期的時間延遲函式 */, 
 				unsigned interval
-					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
+					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */
+			);
 				
 	/*||||| 全域變數 | Global Variables |||||*/
 		/* 讓 LED 位置可以直接透過陣列索引值變數取得 */
