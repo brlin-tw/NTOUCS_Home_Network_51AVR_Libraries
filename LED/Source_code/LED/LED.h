@@ -33,21 +33,29 @@
 		/* LED position definitions */
 			/* 1000_0000b */
 				#define LED7 0x80
+				#define D8 0x80			
 				#define LED_HIGHEST 0x80			
 			/* 0100_0000b */
 				#define LED6 0x40
+				#define D7 0x40			
 			/* 0010_0000b */
 				#define LED5 0x20
+				#define D6 0x20
 			/* 0001_0000b */
 				#define LED4 0x10
+				#define D5 0x10
 			/* 0000_1000b */
 				#define LED3 0x08
+				#define D4 0x08
 			/* 0000_0100b */
 				#define LED2 0x04
+				#define D3 0x04
 			/* 0000_0010b */	
 				#define LED1 0x02	
+				#define D2 0x02
 			/* 0000_0001b */
 				#define LED0 0x01
+				#define D1 0x01
 				#define LED_LOWEST 0x01
 		
 		/* 多重 LED pattern 定義 */
