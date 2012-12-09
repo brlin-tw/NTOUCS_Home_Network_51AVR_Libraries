@@ -32,7 +32,6 @@ main.c
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	unsigned char i;
 	initialize();
 	
 	/* main loop */
@@ -46,7 +45,8 @@ void main(void){
 		delay(20000);		
 		ledDisplayValue(LED_ALL);
 		delay(20000);
-#if 0
+		
+#if FALSE
 		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
 		ledDisplayValue(0xFF);
 		delay(20000);
@@ -63,9 +63,13 @@ void main(void){
 		ledDisplayValue(0xFF);
 		delay(20000);
 
-		for(i = 0; i <= 7; ++i){
-			ledDisplayValue(led_position[i]);
-			delay(20000);
+		/* test led_position[] */{
+			unsigned char i;
+			
+			for(i = 0; i <= 7; ++i){
+				ledDisplayValue(led_position[i]);
+				delay(20000);
+			}
 		}
 #endif
 		
