@@ -23,9 +23,9 @@ unsigned char adcGetValue(
 	void){
 	unsigned char recieve;
 		
-	adc_read_bar_cs_bar = LOGIC_LOW;
+	adc_chip_select_bar_read_bar = LOGIC_LOW;
 	recieve = ADC;
-	adc_read_bar_cs_bar = LOGIC_HIGH;
+	adc_chip_select_bar_read_bar = LOGIC_HIGH;
 		
 	return recieve;
 }
