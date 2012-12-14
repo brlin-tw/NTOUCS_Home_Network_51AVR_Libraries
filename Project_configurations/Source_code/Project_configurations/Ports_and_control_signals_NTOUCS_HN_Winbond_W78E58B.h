@@ -63,7 +63,11 @@
 				/* LCD 暫存器讀寫 */	
 		
 		/* 7 段顯示器 */
-			
+			#define SEVEN_SEG P0
+			/* Renesas(Hitachi) HD74LS373P 控制訊號 */
+				sbit seven_seg_latch_position_enable = P2^3;
+				sbit seven_seg_latch_font_enable = P2^4;
+				
 		/* RS-232 連接埠定義 */
 			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/

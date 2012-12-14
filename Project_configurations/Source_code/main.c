@@ -14,8 +14,8 @@
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
-	/* 初始化 W78E58B 硬體的函式 */
-	void initializeW78E58B();
+	/* 停用所有元件輸出的函式 */
+	void disableAllUnit();
 
 /*||||| 全域變數 | Global Variables |||||*/
 
@@ -23,7 +23,7 @@
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	initializeW78E58B();
+	disableAllUnit();
 	
 	/* main loop */
 	while(TRUE){
@@ -34,7 +34,7 @@ void main(void){
 	return;
 }
 
-void initializeW78E58B(){
+void disableAllUnit(){
 	
 	return;
 }
