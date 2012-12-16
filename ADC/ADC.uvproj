@@ -379,6 +379,11 @@
               <FileType>1</FileType>
               <FilePath>.\Source_code\ADC\ADC.c</FilePath>
             </File>
+            <File>
+              <FileName>ADC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\ADC\ADC.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -388,6 +393,11 @@
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\LED\Source_code\LED\LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\LED\LED.h</FilePath>
             </File>
           </Files>
         </Group>
