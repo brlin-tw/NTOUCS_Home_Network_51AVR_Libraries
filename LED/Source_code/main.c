@@ -74,9 +74,9 @@ void main(void){
 #endif
 		
 		while(TRUE){
-			ledDisplayValue(LED_EVEN);
+			ledDisplayValue(LED_HALF_UP);
 			delay(20000);
-			ledDisplayValue(LED_ODD);
+			ledDisplayValue(LED_HALF_DOWN);
 			delay(20000);
 		}
 		hangForever();
