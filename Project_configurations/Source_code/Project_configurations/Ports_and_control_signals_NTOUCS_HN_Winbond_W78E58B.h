@@ -67,7 +67,36 @@
 			/* Renesas(Hitachi) HD74LS373P 控制訊號 */
 				sbit seven_seg_latch_position_enable = P2^3;
 				sbit seven_seg_latch_font_enable = P2^4;
+		
+		/* 計時器(timer)／計數器(counter)與外部中斷 */
+			/* 計時器(timer)／計數器(counter)外部訊號輸入 */
+				#define tmr_ctr1_ext_src T1
+				#define tmr_ctr0_ext_src T0
 				
+			/* 外部中斷輸入 */
+				#define ext_interrupt1_bar INT1
+				#define ext_interrupt0_bar INT0
+				
+			/* 內部暫存器 */
+				#define tmr_ctr1_reg_high TH1
+				#define tmr_ctr1_reg_low TL1			
+				#define tmr_ctr0_reg_high TH0
+				#define tmr_ctr0_reg_low TL0
+
+			/* TCON(Timer/counter CONtrol register) 暫存器 */
+				#define tmr_ctr1_overflow TF1
+				#define tmr_ctr1_run TR1
+				#define tmr_ctr0_overflow TF0
+				#define tmr_ctr0_run TR0
+				
+				#define ext_int1_triggered IE1
+				#define ext_int1_type IT1
+				#define ext_int0_triggered IE0
+				#define ext_int0_type IT0
+			
+			/* TMOD(Timer/counter MODe control register) 暫存器 */
+				#define tmr_ctr_mode TMOD
+			
 		/* RS-232 連接埠定義 */
 			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
