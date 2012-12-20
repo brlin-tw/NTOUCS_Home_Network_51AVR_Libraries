@@ -12,6 +12,7 @@ main.c
 /* Testing target */
 	#include "Flow_of_control/Delay.h"
 	#include "Flow_of_control/Hang.h"
+	
 /* led functions */
 	#include "LED/LED.h"
 	
@@ -21,8 +22,11 @@ main.c
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
 	/* 初始化8051硬體的函式 */
-	void initialize8051();
+		void initialize8051();
 
+	/* 功能測試 */
+		void testDelaySecond(bit timer);
+		
 /*||||| 全域變數 | Global Variables |||||*/
 	
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -33,15 +37,50 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
-		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
+		testDelaySecond(TMR_CTR0);
+		testDelaySecond(TMR_CTR1);
+		
+		ledDisplayValue(LED_ALL);
 		hangForever();
-		ledDisplayValue(0xff);
+		
 	}
 	
 	return;
 }
 
 void initialize8051(){
+	/* 清空 LED 輸出 */
+		LED = 0xFF;
+	/* 停用 ADC 的輸出 */
+		adc_chip_select_bar_read_bar = LOGIC_HIGH;
+	/* 停用 DIP 的輸出 */
+		dip_sw_chip_enable_bar = LOGIC_HIGH;
+	/* 停用 LCD */
+		lcd_enable = LOGIC_LOW;
+	/* 停用 LCD 的暫存器輸入 */
+		lcd_read_write_bar = LOGIC_HIGH;
+	/* 停用 7 段顯示器 */
+		SEVEN_SEG = 0x00;
+		/* 關閉數位顯示開關 */
+			seven_seg_latch_position_enable = LOGIC_HIGH;
+			seven_seg_latch_position_enable = LOGIC_LOW;
+			delay(400);
+		/* 清空數位字型內容 */
+			seven_seg_latch_font_enable = LOGIC_HIGH;
+			seven_seg_latch_font_enable = LOGIC_LOW;
+	/* 停用計時器(timer)／計數器(counter) */
+		tmr_ctr1_run = LOGIC_LOW;
+		tmr_ctr0_run = LOGIC_LOW;
+	return;
+}
+
+void testDelaySecond(bit timer){
+	unsigned char i;
 	
+	while(switch4 == LOGIC_HIGH){
+		delaySecond(timer, 1);
+		ledDisplayValue(i);
+		++i;
+	}
 	return;
 }
