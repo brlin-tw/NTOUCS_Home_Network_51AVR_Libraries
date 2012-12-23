@@ -38,8 +38,14 @@
 			#define SEVEN_SEGMENT_FONT_ALL 0xFF
 			/* (decimal) point
 			   　1000_0000b */
-				#define SEVEN_SEGMENT_FONT_POINT 0xF0
+				#define SEVEN_SEGMENT_FONT_POINT 0x80
 			
+	/* 數位掃描電路延遲時間
+	   　數位的掃描電路切換會有延遲，造成下一個數位的字型發光在前一個數位的殘影
+		 　所以 seven_segmentWritePosition() 呼叫完要等一下
+		 　估計時間
+		 　　delay(100~400) */
+		#define SEVEN_SEGMENT_SCAN_DELAY 400
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/

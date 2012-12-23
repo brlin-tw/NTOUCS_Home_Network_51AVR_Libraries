@@ -33,7 +33,8 @@
 		void initializeSystem();
 
 	/* unit test procedures */
-		void testSevenSegmentDisplayDecimal();
+		void testSevenSegmentDisplayDecimal();\
+		void testSevenSegmentDisplayPoint();
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -45,7 +46,7 @@ void main(void){
 	/* main loop */
 	while(TRUE){
 		testSevenSegmentDisplayDecimal();
-		seven_segmentDisplayDecimal(8888);
+		testSevenSegmentDisplayPoint();
 		hangForever();
 	}
 	
@@ -81,6 +82,7 @@ void testSevenSegmentDisplayDecimal(){
 	while(switch4 == LOGIC_HIGH){
 		seven_segmentDisplayDecimal(count); 
 	}
+	seven_segmentDisable();
 	delay(65535);
 	for(; count <= 9999; ++count){
 		if(switch4 == LOGIC_LOW){
@@ -92,5 +94,19 @@ void testSevenSegmentDisplayDecimal(){
 	}
 	seven_segmentDisable();
 	
+	return;
+}
+
+void testSevenSegmentDisplayPoint(){
+	unsigned char scan;
+	delay(65535);
+	while(switch4 == LOGIC_HIGH){
+		for(scan = 0; scan < SEVEN_SEG_DIGIT_NO; ++scan){
+			seven_segmentWritePositionFont(SEVEN_SEGMENT_FONT_POINT);			
+			seven_segmentWritePosition(seven_segment_scan_position[scan]);
+			delay(SEVEN_SEGMENT_SCAN_DELAY);
+		}
+	}
+	seven_segmentDisable();
 	return;
 }

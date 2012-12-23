@@ -16,12 +16,7 @@ Seven_segment_display.c
 		#include "../Flow_of_control/Delay.h"
 		
 /*||||| 常數與巨集 | Constants & Macros |||||*/
-	/* 數位掃描電路延遲時間
-	   　數位的掃描電路切換會有延遲，造成下一個數位的字型發光在前一個數位的殘影
-		 　所以 seven_segmentWritePosition() 呼叫完要等一下
-		 　估計時間
-		 　　delay(100~400) */
-		#define SEVEN_SEGMENT_SCAN_DELAY 400
+
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
@@ -68,7 +63,7 @@ Seven_segment_display.c
 		/* 關閉數位顯示開關 */
 			seven_seg_latch_position_enable = LOGIC_HIGH;
 			seven_seg_latch_position_enable = LOGIC_LOW;
-			delay(400);
+			delay(SEVEN_SEGMENT_SCAN_DELAY);
 		/* 清空數位字型內容 */
 			seven_seg_latch_font_enable = LOGIC_HIGH;
 			seven_seg_latch_font_enable = LOGIC_LOW;
