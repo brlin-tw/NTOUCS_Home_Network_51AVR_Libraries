@@ -4,11 +4,12 @@
 */
 /*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 /* Standard io library definition? */
-#include <stdio.h>
+	#include <stdio.h>
 
 /* Test object */
-#include "Project_configurations/Common_definitions.h"
-
+	#include "Project_configurations/Common_definitions.h"
+	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/

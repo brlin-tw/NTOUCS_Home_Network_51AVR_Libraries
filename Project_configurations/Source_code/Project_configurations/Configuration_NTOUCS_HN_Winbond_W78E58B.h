@@ -1,6 +1,6 @@
-/* Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h
+/* Configurations_NTOUCS_HN_Winbond_W78E58B.h
 程式名稱 | Program name
-	Ports and control signals definition of NTOUCS Home Network Winbond W78E58B development board.
+	Configurations(control signals, ports, and other values of NTOUCS Home Network Winbond W78E58B development board.
 更新紀錄 | Changelog
 	Changelog is now stored on GitHub(http://www.github.com)
 已知問題 | Known issues
