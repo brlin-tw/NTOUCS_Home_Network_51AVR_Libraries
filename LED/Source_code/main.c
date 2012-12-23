@@ -9,6 +9,9 @@ main.c
 /* Common definitions */
 	#include "Project_configurations/Common_definitions.h"
 
+/* Target device configurations */
+	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+
 /* for LED operations */
 	#include "LED/LED.h"
 
@@ -87,9 +90,9 @@ void main(void){
 
 void initialize(){
 	/* 停用 ADC 的輸出 */
-		adc_read_bar_cs_bar = LOGIC_HIGH;
+		adc_chip_select_bar_read_bar = LOGIC_HIGH;
 	/* 停用 DIP 的輸出 */
-		dip_ground = LOGIC_HIGH;
+		dip_sw_chip_enable_bar = LOGIC_HIGH;
 	/* 停用 LCD */
 		lcd_enable = LOGIC_LOW;
 	/* disable LCD register write */
