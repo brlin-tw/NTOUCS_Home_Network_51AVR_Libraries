@@ -4,7 +4,7 @@ Seven_segment_display.c
 */
 /*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 	/* ports definitions */
-		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
 	
 	/* for logic signals */
 		#include "../Project_configurations/Common_definitions.h"

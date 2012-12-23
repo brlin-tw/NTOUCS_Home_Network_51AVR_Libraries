@@ -14,7 +14,7 @@
 	#include "Project_configurations/Common_definitions.h"
 
 /* Ports and control signals definitions */
-	#include "Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
 
 /* 7 segment display procedures */
 	#include "Seven_segment_display/Seven_segment_display.h"
