@@ -65,12 +65,19 @@
 					
 		void seven_segmentDisplayDecimal(
 			unsigned int value
-				/* 顯示的數值(0 ~ power(10, SEVEN_SEG_DIGIT_NO) - 1 */
+				/* 顯示的數值(0 ~ power(10, SEVEN_SEG_DIGIT_NO) - 1
+    			 不過目前的實作只支持到 4 位元 */
 		);
-	
+
+		void seven_segmentDisplayOctal(
+			unsigned int value
+				/* 顯示的數值(0 ~ power(16, SEVEN_SEG_DIGIT_NO) - 1
+				   不過目前的實作只支持到 4 位元 */
+		);
+		
 	/*||||| 全域變數 | Global Variables |||||*/
 		/* 數字字型 */
-			extern code const unsigned char seven_segment_font_digits[10];
+			extern code const unsigned char seven_segment_font_digits[16];
 		/* 掃描位置 */
 			extern code const unsigned char seven_segment_scan_position[4];
 	#ifdef __cplusplus

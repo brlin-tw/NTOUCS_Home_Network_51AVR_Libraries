@@ -26,6 +26,7 @@
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 	/* scan interval of 7 segment display  */
 		#define DISPLAY_INTERVAL 1
+		
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
@@ -33,8 +34,10 @@
 		void initializeSystem();
 
 	/* unit test procedures */
-		void testSevenSegmentDisplayDecimal();\
-		void testSevenSegmentDisplayPoint();
+		void testSevenSegmentDisplayDecimal(void);
+		void testSevenSegmentDisplayPoint(void);
+		void testSevenSegmentDisplayOctal(void);
+		
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -47,6 +50,7 @@ void main(void){
 	while(TRUE){
 		testSevenSegmentDisplayDecimal();
 		testSevenSegmentDisplayPoint();
+		testSevenSegmentDisplayOctal();
 		hangForever();
 	}
 	
@@ -76,7 +80,7 @@ void initializeSystem(){
 	return;
 }
 
-void testSevenSegmentDisplayDecimal(){
+void testSevenSegmentDisplayDecimal(void){
 	unsigned int count = 0;
 	unsigned int i;
 	while(switch4 == LOGIC_HIGH){
@@ -97,7 +101,7 @@ void testSevenSegmentDisplayDecimal(){
 	return;
 }
 
-void testSevenSegmentDisplayPoint(){
+void testSevenSegmentDisplayPoint(void){
 	unsigned char scan;
 	delay(65535);
 	while(switch4 == LOGIC_HIGH){
@@ -108,5 +112,25 @@ void testSevenSegmentDisplayPoint(){
 		}
 	}
 	seven_segmentDisable();
+	return;
+}
+
+void testSevenSegmentDisplayOctal(void){
+	unsigned int count = 0;
+	unsigned int i;
+	while(switch4 == LOGIC_HIGH){
+		seven_segmentDisplayOctal(count); 
+	}
+	seven_segmentDisable();
+	delay(65535);
+	for(; count <= 65535; ++count){
+		if(switch4 == LOGIC_LOW){
+			break;
+		}
+		for(i = 0; i < DISPLAY_INTERVAL; ++i){
+			seven_segmentDisplayOctal(count);
+		}
+	}
+	seven_segmentDisable();	
 	return;
 }

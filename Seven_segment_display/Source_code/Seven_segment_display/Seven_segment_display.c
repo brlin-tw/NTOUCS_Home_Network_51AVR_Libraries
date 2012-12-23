@@ -22,7 +22,7 @@ Seven_segment_display.c
 /*||||| 函式雛型 | Function Prototypes |||||*/
 
 /*||||| 全域變數 | Global Variables |||||*/
-	extern code const unsigned char seven_segment_font_digits[10]
+	extern code const unsigned char seven_segment_font_digits[16]
 		/* ７段顯示器的數字字型（1 代表亮） */ = {
 		0x3F
 			/* 0: 0011_1111b */, 
@@ -43,7 +43,19 @@ Seven_segment_display.c
 		0x7F
 			/* 8: 0111_1111b */, 
 		0x6F
-			/* 9: 0110_1111b */
+			/* 9: 0110_1111b */, 
+		0x77
+			/* A: 0111_0111b */, 
+		0x7C
+			/* b: 0111_1100b */, 
+		0x39
+			/* C: 0011_1001b */, 
+		0x5E
+			/* d: 0101_1110b */, 
+		0x79
+			/* E: 0111_1001b */, 
+		0x71
+			/* F: 0111_0001b */		
 	};
 		
 	extern code const unsigned char 
@@ -107,4 +119,24 @@ Seven_segment_display.c
 			
 		return;
 	}
-		
+	
+	void seven_segmentDisplayOctal(
+		unsigned int value
+			/* 顯示的數值(0 ~ power(16, SEVEN_SEG_DIGIT_NO) - 1 */){
+		unsigned char i;
+		unsigned char digit;
+			
+		/* 每個數位掃描一遍 */
+			for(i = 0; i < SEVEN_SEG_DIGIT_NO; ++i){
+				digit = value % 16;
+				
+				seven_segmentWritePositionFont(seven_segment_font_digits[digit]);
+				seven_segmentWritePosition(seven_segment_scan_position[i]);
+				/* 等數位掃描電路切換 */
+					delay(SEVEN_SEGMENT_SCAN_DELAY);
+				
+				value /= 16;
+			}
+			
+		return;
+	}
