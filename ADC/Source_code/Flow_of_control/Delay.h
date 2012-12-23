@@ -28,7 +28,8 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
-
+		/* definition of timer/counter */
+			#include "../Timer_or_counter/Timer_or_counter.h"
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -36,15 +37,17 @@
 	/*||||| 函式雛型 | Function Prototypes |||||*/
 	/* 單純的倒數產生時間延遲的函式
 	   　time
-		 　　延遲時距
+		 　　延遲時距（單位：while 迴圈一次運行的時間）
 	*/
 	void delay(unsigned int time);
 	
-	/* 延遲（秒） （尚未實作）
-	   　time
-		 　　延遲時距
+	void delaySecond(
+		/* 延遲（單位：秒） */
+		bit timer, 
+			/* 用來計時的 timer */
+		unsigned int time
+			/* 延遲時距 */);
 	
-	void delaySecond(unsigned int time);*/
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus

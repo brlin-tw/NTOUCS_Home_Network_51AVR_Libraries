@@ -365,9 +365,9 @@
               <FilePath>.\Source_code\Project_configurations\Common_definitions.h</FilePath>
             </File>
             <File>
-              <FileName>Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h</FileName>
+              <FileName>Configuration_NTOUCS_HN_Winbond_W78E58B.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Source_code\Project_configurations\Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h</FilePath>
+              <FilePath>.\Source_code\Project_configurations\Configuration_NTOUCS_HN_Winbond_W78E58B.h</FilePath>
             </File>
           </Files>
         </Group>
