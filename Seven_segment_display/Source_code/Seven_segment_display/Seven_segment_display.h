@@ -30,8 +30,16 @@
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
-		#define SEVEN_SEGMENT_POSITION_ALL 0x0f
-		#define SEVEN_SEGMENT_POSITION_NONE 0x00
+		/* used in seven_segmentWritePosition() */
+			#define SEVEN_SEGMENT_POSITION_ALL 0x0f
+			#define SEVEN_SEGMENT_POSITION_NONE 0x00
+		
+		/* position fonts */
+			#define SEVEN_SEGMENT_FONT_ALL 0xFF
+			/* (decimal) point
+			   　1000_0000b */
+				#define SEVEN_SEGMENT_FONT_POINT 0xF0
+			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
