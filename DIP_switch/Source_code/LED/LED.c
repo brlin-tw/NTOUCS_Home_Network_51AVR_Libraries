@@ -7,6 +7,9 @@ LED.c
 		/* led constant definition */
 	#include "../Project_configurations/Common_definitions.h"
 		/* for C true */
+	/* Target device configurations */
+		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -14,6 +17,9 @@ LED.c
 /*||||| 函式雛型 | Function Prototypes |||||*/
 
 /*||||| 全域變數 | Global Variables |||||*/
+	code unsigned char led_position[8] = {
+		LED0, LED1, LED2, LED3, LED4, LED5, LED6, LED7
+	};
 
 /*||||| 主要程式碼 | Main Code |||||*/
 void ledDisplayValue(unsigned char value){
@@ -22,35 +28,32 @@ void ledDisplayValue(unsigned char value){
 	return;
 }
 
-
 void ledRotateOneWay(
 	/* 讓 LED 從一邊亮到另外一邊 */
-	unsigned char initial_position, 
-		/* 初始位置 */
+	unsigned char current_position, 
+		/* 目前 LED 位置 */
 	bit direction
 		/* 輪動方向 */, 
 	void (*delay)(unsigned)
 		/* 用來當作輪動周期的時間延遲函式 */, 
 	unsigned interval
 		/* 輪動週期（從一個 LED 跳到下一個 LED 的 tick 數）*/ ){
-	/* set initial position : use initial_position as led_position to save memory */
-		#define led_position initial_position
-
+	
 	/* rotate to last bit */
 		while(TRUE){
 			/* leave when overflow/underflow to 0 */
-				if(led_position == 0x0){
+				if(current_position == 0x0){
 					return;
 				}
 			
-			ledDisplayValue(led_position);
+			ledDisplayValue(current_position);
 			delay(interval);
 				
 			/* shift 1 bit */
 				if(direction == LED_ROTATE_UP){
-					led_position <<= 1;
+					current_position <<= 1;
 				}else{
-					led_position >>= 1;
+					current_position >>= 1;
 				}
 		}
 }
@@ -75,5 +78,12 @@ void ledRotateTwoWay(
 		~initial_direction, 
 		delay, 
 		interval);
+	return;
+}
+
+void ledDisable(
+	/* 關閉 LED 顯示 */
+	void){
+	ledDisplayValue(LED_NONE);
 	return;
 }

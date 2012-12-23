@@ -1,6 +1,6 @@
-/* Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h
+/* Configurations_NTOUCS_HN_Winbond_W78E58B.h
 程式名稱 | Program name
-	Ports and control signals definition of NTOUCS Home Network Winbond W78E58B development board.
+	Configurations(control signals, ports, and other values of NTOUCS Home Network Winbond W78E58B development board.
 更新紀錄 | Changelog
 	Changelog is now stored on GitHub(http://www.github.com)
 已知問題 | Known issues
@@ -46,7 +46,7 @@
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
-			sbit adc_read_bar_chip_select_bar = P2^6;
+			sbit adc_chip_select_bar_read_bar = P2^6;
 				/* 開啟 ADC 至 bus 輸出的訊號 */
 				
 		/* DIP 封裝指撥開關 */
@@ -63,6 +63,41 @@
 				/* LCD 暫存器讀寫 */	
 		
 		/* 7 段顯示器 */
+			#define SEVEN_SEG P0
+			/* 7 段顯示器的數位數量 */
+			#define SEVEN_SEG_DIGIT_NO 4
+			/* Renesas(Hitachi) HD74LS373P 控制訊號 */
+				sbit seven_seg_latch_position_enable = P2^3;
+				sbit seven_seg_latch_font_enable = P2^4;
+		
+		/* 計時器(timer)／計數器(counter)與外部中斷 */
+			/* 計時器(timer)／計數器(counter)外部訊號輸入 */
+				#define tmr_ctr1_ext_src T1
+				#define tmr_ctr0_ext_src T0
+				
+			/* 外部中斷輸入 */
+				#define ext_interrupt1_bar INT1
+				#define ext_interrupt0_bar INT0
+				
+			/* 內部暫存器 */
+				#define tmr_ctr1_reg_high TH1
+				#define tmr_ctr1_reg_low TL1			
+				#define tmr_ctr0_reg_high TH0
+				#define tmr_ctr0_reg_low TL0
+
+			/* TCON(Timer/counter CONtrol register) 暫存器 */
+				#define tmr_ctr1_overflow TF1
+				#define tmr_ctr1_run TR1
+				#define tmr_ctr0_overflow TF0
+				#define tmr_ctr0_run TR0
+				
+				#define ext_int1_triggered IE1
+				#define ext_int1_type IT1
+				#define ext_int0_triggered IE0
+				#define ext_int0_type IT0
+			
+			/* TMOD(Timer/counter MODe control register) 暫存器 */
+				#define tmr_ctr_mode TMOD
 			
 		/* RS-232 連接埠定義 */
 			

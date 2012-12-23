@@ -28,19 +28,62 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* LED position definitions */
-			#define LED_HIGHEST 0x80
-			#define LED_LOWEST 0x1
+			/* 1000_0000b */
+				#define LED7 0x80
+				#define D8 0x80			
+				#define LED_HIGHEST 0x80			
+			/* 0100_0000b */
+				#define LED6 0x40
+				#define D7 0x40			
+			/* 0010_0000b */
+				#define LED5 0x20
+				#define D6 0x20
+			/* 0001_0000b */
+				#define LED4 0x10
+				#define D5 0x10
+			/* 0000_1000b */
+				#define LED3 0x08
+				#define D4 0x08
+			/* 0000_0100b */
+				#define LED2 0x04
+				#define D3 0x04
+			/* 0000_0010b */	
+				#define LED1 0x02	
+				#define D2 0x02
+			/* 0000_0001b */
+				#define LED0 0x01
+				#define D1 0x01
+				#define LED_LOWEST 0x01
+		
+		/* 多重 LED pattern 定義 */
+			/* 1111_1111b */
+				#define LED_ALL 0xFF
+			/* 0000_0000b */
+				#define LED_NONE 0x00
+			/* 1111_0000b */
+				#define LED_HALF_UP 0xF0
+			/* 0000_1111b */
+				#define LED_HALF_DOWN 0x0F
+			/* 1010_1010b */
+				#define LED_ODD 0xAA
+			/* 0101_0101b */
+				#define LED_EVEN 0x55
+		
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		void ledDisable(
+			/* 關閉 LED 顯示 */
+			void);
+				
 		void ledDisplayValue(unsigned char value);
 			/* 顯示數值至 LED
 				 　value
 				 　　要顯示的 8 位元數值，LOGIC_HIGH 代表發光 */
-			
+
 		/* 輪轉(rotate)相關函式 */
 			#define LED_ROTATE_UP 1
 				/* 往高位數輪轉 */
@@ -55,7 +98,9 @@
 				void (*delay)(unsigned)
 					/* 用來當作輪動周期的時間延遲函式 */, 
 				unsigned interval
-					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
+					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間）
+  					 會直接傳遞給 *delay(interval) */
+			);
 			void ledRotateTwoWay(
 				/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
 				bit initial_direction
@@ -63,10 +108,13 @@
 				void (*delay)(unsigned)
 					/* 用來當作輪動周期的時間延遲函式 */, 
 				unsigned interval
-					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */);
+					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */
+			);
 				
 	/*||||| 全域變數 | Global Variables |||||*/
-	
+		/* 讓 LED 位置可以直接透過陣列索引值變數取得 */
+			extern code unsigned char led_position[8];
+			
 	#ifdef __cplusplus
 		}
 	#endif

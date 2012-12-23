@@ -14,7 +14,7 @@
 	#include "Project_configurations/Common_definitions.h"
 
 /* Ports and control signals definitions */
-	#include "Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
 
 /* Testing object */
 	#include "DIP_switch/DIP_switch.h"
@@ -49,7 +49,7 @@ void main(void){
 
 void initializeSystem(){
 	/* 啟用／停用 ADC 的輸入 */
-		adc_read_bar_chip_select_bar = LOGIC_HIGH;
+		adc_chip_select_bar_read_bar = LOGIC_HIGH;
 	/* 啟用／停用 DIP 的輸入 */
 		dip_sw_chip_enable_bar = LOGIC_HIGH;
 	/* 啟用／停用 LCD */
