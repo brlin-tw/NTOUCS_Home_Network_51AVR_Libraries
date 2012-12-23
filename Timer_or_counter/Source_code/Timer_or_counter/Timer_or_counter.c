@@ -4,7 +4,7 @@ Timer_or_counter.c
 */
 /*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 	/* 目標微控制器的 SFR 暫存器定義 */
-		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
 
 	/* for LOGIC_* definition */
 		#include "../Project_configurations/Common_definitions.h"

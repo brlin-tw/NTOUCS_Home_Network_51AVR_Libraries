@@ -12,7 +12,7 @@
 
 /* Project_configurations */
 	#include "Project_configurations/Common_definitions.h"
-	#include "Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
 
 /* Flow_of_control procedures definitions */
 	#include "Flow_of_control/Delay.h"

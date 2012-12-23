@@ -28,7 +28,7 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
+
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* LED position definitions */
 			/* 1000_0000b */
@@ -75,6 +75,10 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		void ledDisable(
+			/* 關閉 LED 顯示 */
+			void);
+				
 		void ledDisplayValue(unsigned char value);
 			/* 顯示數值至 LED
 				 　value
