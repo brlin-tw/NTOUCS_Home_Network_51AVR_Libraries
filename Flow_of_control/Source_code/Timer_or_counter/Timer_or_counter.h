@@ -44,10 +44,17 @@
 			
 		/* 用於 tmr_ctrRegisterSetValue*() */
 			#define TMR_CTR_REG_MAX_16B 65535
-		
-		/* 用於 timerSetPeriod16bit() */
-			#define TMR_16B_11_0592_MHZ_1S_PERIOD 61440
+			#define TMR_CTR_REG_MAX_8B 255
+			
+		/* 用於 timerSetPeriod16bit()
+       因為此函式 period 參數定義域對應的關係要 - 1		*/
+			#define TMR_16B_11_0592_MHZ_1S_PERIOD (61440 - 1/* shift 1 to match param domain */)
 			#define TMR_16B_11_0592_MHZ_1S_COUNT 15
+		
+		/* 用於 timerSetPeriodMode2() */
+			#define TMR_8B_11_0952_MHZ_1S_PERIOD (256 - 1/* shift 1 to match param domain */)
+			#define TMR_8B_11_0952_MHZ_1S_COUNT 3600
+			/* 200 4608? */
 			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
@@ -59,13 +66,40 @@
 			unsigned int value
 				/* 要填入暫存器的數值（0~65535） */);
 
+		void tmr_ctrSetValueMode2(
+			/* 設定計時器(timer)／計數器(counter)內部暫存器（16位元） */
+			bit selection
+				/* 選擇哪一個計時器(timer)／計數器(counter) */, 
+			unsigned char high, 
+			unsigned char low
+				/* 要填入暫存器的數值（0~255） */);
+
 		void timerSetPeriod16bit(
-			/* 設定16位元計時器(timer)週期 */
+			/* 設定16位元計時器(timer)溢位(overflow)週期 */
 			bit selection
 				/* 選擇哪一個計時器(timer)／計數器(counter) */, 
 			unsigned int period
-				/* 計時器(timer)溢位(overflow)的時間（單位： */);
-				
+			/* 讓計時器(timer)暫存器溢位(overflow)所需時間
+			   單位
+				 　讓計時器(timer)暫存器溢位的遞增次數
+				 參數定義域
+				 　0（暫存器遞增 1 次就溢位）
+				 　~
+				 　65535（暫存器遞增 65536 次溢位） */);
+
+		void timerSetPeriodMode2(
+			/* 設定 8 位元計時器(timer)溢位(overflow)週期(mode2) */
+			bit selection
+				/* 選擇哪一個計時器(timer)／計數器(counter) */, 
+			unsigned int period
+			/* 讓計時器(timer)暫存器溢位(overflow)所需時間
+			   單位
+				 　讓計時器(timer)暫存器溢位的遞增次數
+				 參數定義域
+				 　0（暫存器遞增 1 次就溢位的時間）
+				 　~
+				 　255（暫存器遞增 256 次溢位的時間） */);
+
 		void tmr_ctrSetMode(
 			/* 設定計時器(timer)／計數器(counter)的模式 */
 			bit selection
@@ -84,6 +118,7 @@
 		
 		bit tmr_ctrIsOverflow(bit selection);
 		void tmr_ctrClearOverflow(bit selection);
+		
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus

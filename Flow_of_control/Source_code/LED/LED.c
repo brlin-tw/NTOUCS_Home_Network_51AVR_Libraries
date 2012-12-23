@@ -7,6 +7,9 @@ LED.c
 		/* led constant definition */
 	#include "../Project_configurations/Common_definitions.h"
 		/* for C true */
+	/* Target device configurations */
+		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -75,5 +78,12 @@ void ledRotateTwoWay(
 		~initial_direction, 
 		delay, 
 		interval);
+	return;
+}
+
+void ledDisable(
+	/* 關閉 LED 顯示 */
+	void){
+	ledDisplayValue(LED_NONE);
 	return;
 }

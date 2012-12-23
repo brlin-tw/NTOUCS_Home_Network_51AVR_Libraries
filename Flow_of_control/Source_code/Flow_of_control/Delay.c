@@ -9,9 +9,6 @@ Delay.c
 	/* Common definitions */
 		#include "../Project_configurations/Common_definitions.h"
 
-	/* for target device definitions */
-		#include "../Project_configurations/Ports_and_control_signals_NTOUCS_HN_Winbond_W78E58B.h"
-	
 	/* for timer procedures and definitions */
 		#include "../Timer_or_counter/Timer_or_counter.h"
 		

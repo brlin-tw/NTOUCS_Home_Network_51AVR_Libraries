@@ -9,6 +9,8 @@ main.c
 /* Common definitions */
 	#include "Project_configurations/Common_definitions.h"
 
+/* Configuration of target hardware */
+	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
 /* Testing target */
 	#include "Flow_of_control/Delay.h"
 	#include "Flow_of_control/Hang.h"
