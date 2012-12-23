@@ -92,14 +92,14 @@ Seven_segment_display.c
 		return;
 	}
 	
-	void seven_segmentDisplayValue4digit(
+	void seven_segmentDisplayDecimal(
 		unsigned int value
-			/* 顯示的數值(0000~9999) */){
+			/* 顯示的數值(0 ~ power(10, SEVEN_SEG_DIGIT_NO) - 1 */){
 		unsigned char i;
 		unsigned char digit;
 			
 		/* 每個數位掃描一遍 */
-			for(i = 0; i < 4; ++i){
+			for(i = 0; i < SEVEN_SEG_DIGIT_NO; ++i){
 				digit = value % 10;
 				
 				seven_segmentWritePositionFont(seven_segment_font_digits[digit]);

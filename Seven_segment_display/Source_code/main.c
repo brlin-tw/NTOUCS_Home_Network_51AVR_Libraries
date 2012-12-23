@@ -32,25 +32,20 @@
 	/* 初始化硬體（關掉所有元件）的函式 */
 		void initializeSystem();
 
+	/* unit test procedures */
+		void testSevenSegmentDisplayDecimal();
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	unsigned int count;
-	unsigned int i;
-	
 	initializeSystem();
 	
 	/* main loop */
 	while(TRUE){
-		for(count = 9500; count <= 9999; ++count){
-			for(i = 0; i < DISPLAY_INTERVAL; ++i){
-				seven_segmentDisplayValue4digit(count);
-			}
-		}
-		seven_segmentDisable();
+		testSevenSegmentDisplayDecimal();
+		seven_segmentDisplayDecimal(8888);
 		hangForever();
 	}
 	
@@ -77,5 +72,25 @@ void initializeSystem(){
 		/* 清空數位字型內容 */
 			seven_seg_latch_font_enable = LOGIC_HIGH;
 			seven_seg_latch_font_enable = LOGIC_LOW;
+	return;
+}
+
+void testSevenSegmentDisplayDecimal(){
+	unsigned int count = 0;
+	unsigned int i;
+	while(switch4 == LOGIC_HIGH){
+		seven_segmentDisplayDecimal(count); 
+	}
+	delay(65535);
+	for(; count <= 9999; ++count){
+		if(switch4 == LOGIC_LOW){
+			break;
+		}
+		for(i = 0; i < DISPLAY_INTERVAL; ++i){
+			seven_segmentDisplayDecimal(count);
+		}
+	}
+	seven_segmentDisable();
+	
 	return;
 }

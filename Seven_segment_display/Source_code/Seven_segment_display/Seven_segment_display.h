@@ -57,9 +57,9 @@
 				/* current max 4 bit defined, from 0x01 to 0x08 */
 		);
 					
-		void seven_segmentDisplayValue4digit(
+		void seven_segmentDisplayDecimal(
 			unsigned int value
-				/* 顯示的數值(0000~9999) */
+				/* 顯示的數值(0 ~ power(10, SEVEN_SEG_DIGIT_NO) - 1 */
 		);
 	
 	/*||||| 全域變數 | Global Variables |||||*/
