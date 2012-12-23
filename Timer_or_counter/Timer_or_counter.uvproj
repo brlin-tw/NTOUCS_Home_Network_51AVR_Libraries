@@ -159,14 +159,14 @@
         <Utilities>
           <Flash1>
             <UseTargetDll>0</UseTargetDll>
-            <UseExternalTool>0</UseExternalTool>
-            <RunIndependent>0</RunIndependent>
+            <UseExternalTool>1</UseExternalTool>
+            <RunIndependent>1</RunIndependent>
             <UpdateFlashBeforeDebugging>0</UpdateFlashBeforeDebugging>
             <Capability>0</Capability>
             <DriverSelection>-1</DriverSelection>
           </Flash1>
           <Flash2></Flash2>
-          <Flash3></Flash3>
+          <Flash3>"H:\Document\Ubuntu One\家庭網路設備設計與控制\軟體\IspWriter\8051IspWriter.exe" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <Target51>

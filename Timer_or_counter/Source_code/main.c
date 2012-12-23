@@ -35,6 +35,7 @@
 	/* 功能測試函式 */
 		void testTimerMode1(bit timer);
 		
+		void testTimerMode2(bit timer);
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -45,7 +46,14 @@ void main(void){
 
 	/* main loop */
 		while(TRUE){
+			testTimerMode1(TMR_CTR0);
+			ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
 			testTimerMode1(TMR_CTR1);
+			ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN, delay, 10000);
+			testTimerMode2(TMR_CTR0);
+			ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
+			testTimerMode2(TMR_CTR1);
+			ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN, delay, 10000);
 			
 			/* end */
 			ledDisplayValue(0xff);
@@ -93,7 +101,7 @@ void testTimerMode1(bit timer){
 		while(switch4 != LOGIC_LOW){
 			if(tmr_ctrIsOverflow(timer) == TRUE){
 				period_count++;
-				timerSetPeriod16bit(timer, 61440);
+				timerSetPeriod16bit(timer, TMR_16B_11_0592_MHZ_1S_PERIOD);
 				tmr_ctrClearOverflow(timer);
 			}
 			if(period_count == TMR_16B_11_0592_MHZ_1S_COUNT){
@@ -103,5 +111,34 @@ void testTimerMode1(bit timer){
 			}
 		}
 	}
+	
+	tmr_ctrDisable(timer);
+	return;
+}
+
+void testTimerMode2(bit timer){
+	tmr_ctrSetMode(timer, TMR_CTR_MODE2);
+	timerSetPeriodMode2(timer, TMR_8B_11_0952_MHZ_1S_PERIOD);
+	tmr_ctrEnable(timer);
+	
+	/* 1s */{
+		unsigned int period_count = 0;
+		unsigned char led_pattern = LED_ODD;
+			
+		while(switch4 != LOGIC_LOW){
+			if(tmr_ctrIsOverflow(timer) == TRUE){
+				period_count++;
+				timerSetPeriodMode2(timer, TMR_8B_11_0952_MHZ_1S_PERIOD);
+				tmr_ctrClearOverflow(timer);
+			}
+			if(period_count == TMR_8B_11_0952_MHZ_1S_COUNT){
+				led_pattern = ~led_pattern;
+				ledDisplayValue(led_pattern);
+				period_count = 0;
+			}
+		}
+	}
+	
+	tmr_ctrDisable(timer);
 	return;
 }

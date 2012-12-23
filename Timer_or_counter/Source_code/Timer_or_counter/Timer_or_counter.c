@@ -40,26 +40,55 @@ Timer_or_counter.c
 		}
 		return;
 	}	
-	
+
+	void tmr_ctrSetValueMode2(
+		/* 設定計時器(timer)／計數器(counter)內部暫存器（16位元） */
+		bit selection
+			/* 選擇哪一個計時器(timer)／計數器(counter) */, 
+		unsigned char high, 
+		unsigned char low
+			/* 要填入暫存器的數值（0~255） */){
+		tmr_ctrSetValue16bit(selection, high * 256/* 2^8 */ + low);
+		return;
+	}
+
 	void timerSetPeriod16bit(
-		/* 設定16位元計時器(timer)週期 */
+		/* 設定16位元計時器(timer)溢位(overflow)週期 */
 		bit selection
 			/* 選擇哪一個計時器(timer) */, 
 		unsigned int period
-			/* 讓計時器(timer)溢位(overflow)的時間
-			   0~65535（單位：計時器(timer)運作週期） */){
-			if(selection == TMR_CTR1){
-				tmr_ctrSetValue16bit(
-				TMR_CTR1, 
-				(TMR_CTR_REG_MAX_16B - period + 1));
-			}else{
-				tmr_ctrSetValue16bit(
-				TMR_CTR0, 
-				(TMR_CTR_REG_MAX_16B - period + 1));
-			}
+		/* 讓計時器(timer)暫存器溢位(overflow)所需時間
+			 單位
+			 　讓計時器(timer)暫存器溢位的遞增次數
+			 參數定義域
+			 　0（暫存器遞增 1 次就溢位）
+			 　~
+			 　65535（暫存器遞增 65536 次溢位） */){
+		tmr_ctrSetValue16bit(
+		selection, 
+		(TMR_CTR_REG_MAX_16B - period));
 		return;
 	}
-	
+
+	void timerSetPeriodMode2(
+		/* 設定 8 位元計時器(timer)溢位(overflow)週期(mode2) */
+		bit selection
+			/* 選擇哪一個計時器(timer)／計數器(counter) */, 
+		unsigned int period
+		/* 讓計時器(timer)暫存器溢位(overflow)所需時間
+			 單位
+			 　讓計時器(timer)暫存器溢位的遞增次數
+			 參數定義域
+			 　0（暫存器遞增 1 次就溢位的時間）
+			 　~
+			 　255（暫存器遞增 256 次溢位的時間） */){
+		tmr_ctrSetValueMode2(
+			selection, 
+			(TMR_CTR_REG_MAX_8B - period), 
+			(TMR_CTR_REG_MAX_8B - period));
+	  return;
+	}
+
 	void tmr_ctrSetMode(
 		bit selection
 			/* 選擇哪一個計時器(timer)／計數器(counter) */, 
