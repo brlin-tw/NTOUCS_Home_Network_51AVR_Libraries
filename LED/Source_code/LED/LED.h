@@ -75,6 +75,10 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		void ledDisable(
+			/* 關閉 LED 顯示 */
+			void);
+				
 		void ledDisplayValue(unsigned char value);
 			/* 顯示數值至 LED
 				 　value

@@ -27,8 +27,13 @@ main.c
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
 	/* 初始化硬體（關掉所有設備信號）的函式 */
-	void initialize();
+		void initialize();
 
+	/* 功能測試函式 */
+		void testLEDposition(void);
+		void testLEDpattern(void);
+		void testLEDrotate(void);
+		
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -39,49 +44,10 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
-
-		ledDisplayValue(LED_NONE);
-		delay(20000);		
-		ledDisplayValue(LED_ALL);
-		delay(20000);
-		ledDisplayValue(LED_NONE);
-		delay(20000);		
-		ledDisplayValue(LED_ALL);
-		delay(20000);
+		testLEDpattern();
+		testLEDposition();
+		testLEDrotate();
 		
-#if FALSE
-		ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
-		ledDisplayValue(0xFF);
-		delay(20000);
-		
-		ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN, delay, 10000);
-		ledDisplayValue(0xFF);
-		delay(20000);
-		
-		ledRotateTwoWay(LED_ROTATE_UP, delay, 10000);
-		ledDisplayValue(0xFF);
-		delay(20000);
-		
-		ledRotateTwoWay(LED_ROTATE_DOWN, delay, 10000);
-		ledDisplayValue(0xFF);
-		delay(20000);
-
-		/* test led_position[] */{
-			unsigned char i;
-			
-			for(i = 0; i <= 7; ++i){
-				ledDisplayValue(led_position[i]);
-				delay(20000);
-			}
-		}
-#endif
-		
-		while(TRUE){
-			ledDisplayValue(LED_HALF_UP);
-			delay(20000);
-			ledDisplayValue(LED_HALF_DOWN);
-			delay(20000);
-		}
 		hangForever();
 	}
 	
@@ -97,5 +63,53 @@ void initialize(){
 		lcd_enable = LOGIC_LOW;
 	/* disable LCD register write */
 		lcd_read_write_bar = LOGIC_HIGH;
+	return;
+}
+
+void testLEDposition(void){
+	unsigned char i;
+	
+	for(i = 0; i <= 7; ++i){
+		ledDisplayValue(led_position[i]);
+		delay(20000);
+	}
+	ledDisable();
+	return;
+}
+
+void testLEDpattern(void){
+	ledDisplayValue(LED_ALL);
+	delay(20000);
+	ledDisable();
+	delay(20000);
+	ledDisplayValue(LED_ALL);
+	delay(20000);
+	ledDisplayValue(LED_HALF_UP);
+	delay(20000);
+	ledDisplayValue(LED_HALF_DOWN);
+	delay(20000);	
+	ledDisable();
+
+	return;
+}
+
+void testLEDrotate(void){
+	ledRotateOneWay(LED_LOWEST, LED_ROTATE_UP, delay, 10000);
+	ledDisplayValue(LED_ALL);
+	delay(20000);
+	
+	ledRotateOneWay(LED_HIGHEST, LED_ROTATE_DOWN, delay, 10000);
+	ledDisplayValue(LED_ALL);
+	delay(20000);
+	
+	ledRotateTwoWay(LED_ROTATE_UP, delay, 10000);
+	ledDisplayValue(LED_ALL);
+	delay(20000);
+	
+	ledRotateTwoWay(LED_ROTATE_DOWN, delay, 10000);
+	ledDisplayValue(LED_ALL);
+	delay(20000);
+	ledDisable();
+	
 	return;
 }

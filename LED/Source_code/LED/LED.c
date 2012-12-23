@@ -80,3 +80,10 @@ void ledRotateTwoWay(
 		interval);
 	return;
 }
+
+void ledDisable(
+	/* 關閉 LED 顯示 */
+	void){
+	ledDisplayValue(LED_NONE);
+	return;
+}
