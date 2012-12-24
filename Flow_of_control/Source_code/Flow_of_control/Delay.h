@@ -28,9 +28,8 @@
 	/*||||| Forward declarations |||||*/
 
 	/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
-		/* definition of timer/counter */
-			#include "../Timer_or_counter/Timer_or_counter.h"
-	/*||||| 常數與巨集 | Constants & Macros |||||*/
+
+			/*||||| 常數與巨集 | Constants & Macros |||||*/
 
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
@@ -41,6 +40,12 @@
 	*/
 	void delay(unsigned int time);
 	
+	void delayDoing(
+		/* 延遲並於該時段中執行特定功能 */
+		unsigned int time, 
+		void (*doing)(unsigned int param1), 
+		unsigned int param1);
+		
 	void delaySecond(
 		/* 延遲（單位：秒） */
 		bit timer, 

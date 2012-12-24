@@ -12,6 +12,9 @@ Delay.c
 	/* for timer procedures and definitions */
 		#include "../Timer_or_counter/Timer_or_counter.h"
 		
+	/* definition of timer/counter */
+		#include "../Timer_or_counter/Timer_or_counter.h"
+
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -24,6 +27,18 @@ Delay.c
 void delay(unsigned int time){
 	while(time > 0){
 		time = time - 1;
+	}
+	return;
+}
+
+void delayDoing(
+	/* 延遲並於該時段中執行特定功能 */
+	unsigned int time, 
+	void (*doing)(unsigned int param1), 
+	unsigned int param1){
+	while(time > 0){
+		time = time - 1;
+		(*doing)(param1);
 	}
 	return;
 }
