@@ -49,25 +49,23 @@ void delaySecond(
 		/* 用來計時的 timer */
 	unsigned int time
 		/* 延遲時距（單位：秒） */){
-	unsigned char period_count;
+	unsigned int period_count;
 			
 	/* 先停用可能開啟的 timer */
 		tmr_ctrDisable(timer);
 	
-	tmr_ctrSetMode(timer, TMR_CTR_MODE1);
-	timerSetPeriod16bit(timer, TMR_16B_11_0592_MHZ_1S_PERIOD);			
+	tmr_ctrSetMode(timer, TMR_CTR_MODE2);
+	timerSetPeriodMode2(timer, TMR_8B_11_0952_MHZ_1S_PERIOD);			
 	tmr_ctrEnable(timer);
 			
 	while(time != 0){
 		if(tmr_ctrIsOverflow(timer) == TRUE){
 			tmr_ctrClearOverflow(timer);
-			timerSetPeriod16bit(timer, TMR_16B_11_0592_MHZ_1S_PERIOD);
 			period_count++;
 		}
-		if(period_count == TMR_16B_11_0592_MHZ_1S_COUNT){
+		if(period_count == TMR_8B_11_0952_MHZ_1S_COUNT){
 			period_count = 0;
 			time--;
-			
 		}
 	}
 	tmr_ctrDisable(timer);
@@ -82,22 +80,21 @@ void delaySecondDoing(
 		/* 延遲時距 */, 
 	void (*doing)(unsigned int param1), 
 	unsigned int param1){
-	unsigned char period_count;
+	unsigned int period_count;
 			
 	/* 先停用可能開啟的 timer */
 		tmr_ctrDisable(timer);
 	
-	tmr_ctrSetMode(timer, TMR_CTR_MODE1);
-	timerSetPeriod16bit(timer, TMR_16B_11_0592_MHZ_1S_PERIOD);			
+	tmr_ctrSetMode(timer, TMR_CTR_MODE2);
+	timerSetPeriodMode2(timer, TMR_8B_11_0952_MHZ_1S_PERIOD);			
 	tmr_ctrEnable(timer);
 			
 	while(time != 0){
 		if(tmr_ctrIsOverflow(timer) == TRUE){
 			tmr_ctrClearOverflow(timer);
-			timerSetPeriod16bit(timer, TMR_16B_11_0592_MHZ_1S_PERIOD);
 			period_count++;
 		}
-		if(period_count == TMR_16B_11_0592_MHZ_1S_COUNT){
+		if(period_count == TMR_8B_11_0952_MHZ_1S_COUNT){
 			period_count = 0;
 			time--;
 			

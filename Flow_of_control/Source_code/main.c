@@ -48,10 +48,33 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
 		testDelaySecond(TMR_CTR0);
+		
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
 		testDelaySecond(TMR_CTR1);
+		
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
 		testDelayDoing();
+		
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
 		testDelaySecondDoing();
+
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);		
 		hangForever();
 		
 	}
@@ -93,7 +116,6 @@ void testDelaySecond(bit timer){
 		ledDisplayValue(i);
 		++i;
 	}
-	delay(65535);
 	ledDisable();
 	return;
 }
@@ -103,7 +125,6 @@ void testDelayDoing(void){
 		delayDoing(1, seven_segmentDisplayDecimal, 1234);
 	}
 	seven_segmentDisable();
-	delay(65535);
 	return;
 }
 
@@ -112,6 +133,5 @@ void testDelaySecondDoing(void){
 		delaySecondDoing(TMR_CTR1, 1, seven_segmentDisplayDecimal, 5678);
 	}
 	seven_segmentDisable();
-	delay(65535);
 	return;
 }
