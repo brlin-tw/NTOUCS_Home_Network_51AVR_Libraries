@@ -36,6 +36,7 @@ main.c
 	/* 功能測試 */
 		void testDelaySecond(bit timer);
 		void testDelayDoing(void);
+		void testDelaySecondDoing(void);
 		
 /*||||| 全域變數 | Global Variables |||||*/
 	
@@ -50,6 +51,7 @@ void main(void){
 		testDelaySecond(TMR_CTR0);
 		testDelaySecond(TMR_CTR1);
 		testDelayDoing();
+		testDelaySecondDoing();
 		hangForever();
 		
 	}
@@ -98,8 +100,18 @@ void testDelaySecond(bit timer){
 
 void testDelayDoing(void){
 	while(switch4 == LOGIC_HIGH){	
-		delayDoing(65535, seven_segmentDisplayDecimal, 1234);
+		delayDoing(1, seven_segmentDisplayDecimal, 1234);
 	}
 	seven_segmentDisable();
+	delay(65535);
+	return;
+}
+
+void testDelaySecondDoing(void){
+	while(switch4 == LOGIC_HIGH){	
+		delaySecondDoing(TMR_CTR1, 1, seven_segmentDisplayDecimal, 5678);
+	}
+	seven_segmentDisable();
+	delay(65535);
 	return;
 }
