@@ -29,7 +29,7 @@
 
 	/*||||| 程式所include之函式庫的標頭檔 | Included Library Headers |||||*/
 
-			/*||||| 常數與巨集 | Constants & Macros |||||*/
+	/*||||| 常數與巨集 | Constants & Macros |||||*/
 
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
