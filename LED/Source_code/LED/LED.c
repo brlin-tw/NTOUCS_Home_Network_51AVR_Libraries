@@ -24,7 +24,7 @@ LED.c
 /*||||| 主要程式碼 | Main Code |||||*/
 void ledDisplayValue(unsigned char value){
 	/* 實際上 LED 將邏輯 LOW 訊號視為發光，所以將反向之後再填進去 */
-	LED = ~value;
+	led = ~value;
 	return;
 }
 
