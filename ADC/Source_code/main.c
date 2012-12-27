@@ -45,7 +45,7 @@ void main(void){
 
 void initializeSystem(){
 	/* 清空 LED 輸出 */
-		LED = 0xFF;
+		led = 0xFF;
 	/* 停用 ADC 的輸出 */
 		adc_chip_select_bar_read_bar = LOGIC_HIGH;
 	/* 停用 DIP 的輸出 */
@@ -55,7 +55,7 @@ void initializeSystem(){
 	/* 停用 LCD 的暫存器輸入 */
 		lcd_read_write_bar = LOGIC_HIGH;
 	/* 停用 7 段顯示器的輸入 */
-		SEVEN_SEG = 0x00;
+		seven_seg = 0x00;
 		seven_seg_latch_position_enable = LOGIC_HIGH;
 		seven_seg_latch_position_enable = LOGIC_LOW;
 	return;
