@@ -86,10 +86,10 @@
 				#define tmr_ctr0_reg_low TL0
 
 			/* TCON(Timer/counter CONtrol register) 暫存器 */
-				#define TMR_CTR1_OVERFLOWED TF1
+				#define tmr_ctr1_overflowed TF1
 				#define tmr_ctr1_run TR1
 				
-				#define TMR_CTR0_OVERFLOWED TF0
+				#define tmr_ctr0_overflowed TF0
 				#define tmr_ctr0_run TR0
 				
 				#define EXT_INT1_TRIGGERED IE1
