@@ -88,6 +88,7 @@
 			/* TCON(Timer/counter CONtrol register) 暫存器 */
 				#define tmr_ctr1_overflow TF1
 				#define tmr_ctr1_run TR1
+				
 				#define tmr_ctr0_overflow TF0
 				#define tmr_ctr0_run TR0
 				
