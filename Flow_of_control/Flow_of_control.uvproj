@@ -354,6 +354,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source_code\main.c</FilePath>
             </File>
+            <File>
+              <FileName>Interrupt_callbacks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source_code\Interrupt_callbacks.c</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt_callbacks.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Interrupt_callbacks.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

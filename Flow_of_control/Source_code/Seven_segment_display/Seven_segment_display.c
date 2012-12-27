@@ -71,7 +71,7 @@ Seven_segment_display.c
 	void seven_segmentDisable(
 		/* 關閉 7 段顯示器的顯示 */
 		void){
-		SEVEN_SEG = 0x00;
+		seven_seg = 0x00;
 		/* 關閉數位顯示開關 */
 			seven_seg_latch_position_enable = LOGIC_HIGH;
 			seven_seg_latch_position_enable = LOGIC_LOW;
@@ -84,7 +84,7 @@ Seven_segment_display.c
 	
 	void seven_segmentWritePositionFont(
 		unsigned char font){
-		SEVEN_SEG = ~font;
+		seven_seg = ~font;
 		seven_seg_latch_font_enable = LOGIC_HIGH;
 		seven_seg_latch_font_enable = LOGIC_LOW;
 		return;
@@ -93,7 +93,7 @@ Seven_segment_display.c
 	void seven_segmentWritePosition(
 		unsigned char position
 			/* current max 4 bit defined, from 0x01 to 0x08 */){
-		SEVEN_SEG = position;
+		seven_seg = position;
 		seven_seg_latch_position_enable = LOGIC_HIGH;
 		seven_seg_latch_position_enable = LOGIC_LOW;
 		return;

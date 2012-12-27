@@ -36,13 +36,13 @@
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* 8 位元 LED
 			 　連接至 W78E58B 的 P1 連接埠*/
-			#define LED P1
+			#define led P1
 		
 		/* 按鈕開關 */
-			sbit switch3 = P3^2;
-			sbit switch4 = P3^3;
-			sbit switch5 = P3^4;
-			sbit switch6 = P3^5;
+			sbit BTN_SW3 = P3^2;
+			sbit BTN_SW4 = P3^3;
+			sbit BTN_SW5 = P3^4;
+			sbit BTN_SW6 = P3^5;
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
@@ -63,7 +63,7 @@
 				/* LCD 暫存器讀寫 */	
 		
 		/* 7 段顯示器 */
-			#define SEVEN_SEG P0
+			#define seven_seg P0
 			/* 7 段顯示器的數位數量 */
 			#define SEVEN_SEG_DIGIT_NO 4
 			/* Renesas(Hitachi) HD74LS373P 控制訊號 */
@@ -72,12 +72,12 @@
 		
 		/* 計時器(timer)／計數器(counter)與外部中斷 */
 			/* 計時器(timer)／計數器(counter)外部訊號輸入 */
-				#define tmr_ctr1_ext_src T1
-				#define tmr_ctr0_ext_src T0
+				sbit CTR1_EXT_SRC = P3^5;
+				sbit CTR0_EXT_SRC = P3^4;
 				
 			/* 外部中斷輸入 */
-				#define ext_interrupt1_bar INT1
-				#define ext_interrupt0_bar INT0
+				sbit EXT_INTERRUPT1_BAR = P3^3;
+				sbit EXT_INTERRUPT0_BAR = P3^2;
 				
 			/* 內部暫存器 */
 				#define tmr_ctr1_reg_high TH1
@@ -86,20 +86,59 @@
 				#define tmr_ctr0_reg_low TL0
 
 			/* TCON(Timer/counter CONtrol register) 暫存器 */
-				#define tmr_ctr1_overflow TF1
+				#define tmr_ctr1_overflowed TF1
 				#define tmr_ctr1_run TR1
-				#define tmr_ctr0_overflow TF0
+				
+				#define tmr_ctr0_overflowed TF0
 				#define tmr_ctr0_run TR0
 				
-				#define ext_int1_triggered IE1
+				#define EXT_INT1_TRIGGERED IE1
 				#define ext_int1_type IT1
-				#define ext_int0_triggered IE0
+				#define EXT_INT0_TRIGGERED IE0
 				#define ext_int0_type IT0
 			
 			/* TMOD(Timer/counter MODe control register) 暫存器 */
 				#define tmr_ctr_mode TMOD
 			
-		/* RS-232 連接埠定義 */
+		/* Serial UART 定義 */
+			/* Serial port CONtrol register */
+				#define serial_uart_control SCON
+				
+				/* 模式選擇：實際上代表模式 serial_mode0|serial_mode0 ，與習慣相反 */
+					#define serial_mode0 SM0
+					#define serial_mode1 SM1
+				#define serial_mode2 SM2
+				#define serial_recieve_enable REN
+				#define SRL_TX_INT_TRIGGERED TI
+				#define SRL_RX_INT_TRIGGERED RI
+			
+			/* Serial UART BUFfer register */
+				#define serial_buffer_reg SBUF
+			
+		/* Power CONtrol register */
+			#define power_control_reg PCON
+		
+		/* Interrupt Enable(IE) register */
+			#define int_enable_all EA
+			
+			#define int_tmr_ctr2_enable ET2
+			#define int_tmr_ctr1_enable ET1
+			#define int_tmr_ctr0_enable ET0
+			
+			#define int_serial_uart_enable ES
+			
+			#define int_ext1_enable_bar EX1
+			#define int_ext0_enable_bar EX0
+			
+		/* Interrupt Priority(IP) register */
+			#define int_pri_tmr_ctr2_enable PT2
+			#define int_pri_tmr_ctr1_enable PT1
+			#define int_pri_tmr_ctr0_enable PT0
+			
+			#define int_pri_serial_uart_enable PS
+			
+			#define int_pri_ext1_enable_bar PX1
+			#define int_pri_ext0_enable_bar PX0
 			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 

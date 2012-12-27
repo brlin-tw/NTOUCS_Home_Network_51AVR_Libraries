@@ -84,7 +84,7 @@ void main(void){
 
 void initialize8051(){
 	/* 清空 LED 輸出 */
-		LED = 0xFF;
+		led = 0xFF;
 	/* 停用 ADC 的輸出 */
 		adc_chip_select_bar_read_bar = LOGIC_HIGH;
 	/* 停用 DIP 的輸出 */
@@ -94,7 +94,7 @@ void initialize8051(){
 	/* 停用 LCD 的暫存器輸入 */
 		lcd_read_write_bar = LOGIC_HIGH;
 	/* 停用 7 段顯示器 */
-		SEVEN_SEG = 0x00;
+		seven_seg = 0x00;
 		/* 關閉數位顯示開關 */
 			seven_seg_latch_position_enable = LOGIC_HIGH;
 			seven_seg_latch_position_enable = LOGIC_LOW;
@@ -111,7 +111,7 @@ void initialize8051(){
 void testDelaySecond(bit timer){
 	unsigned char i = 0;
 	
-	while(switch4 == LOGIC_HIGH){
+	while(BTN_SW4 == LOGIC_HIGH){
 		delaySecond(timer, 1);
 		ledDisplayValue(i);
 		++i;
@@ -121,7 +121,7 @@ void testDelaySecond(bit timer){
 }
 
 void testDelayDoing(void){
-	while(switch4 == LOGIC_HIGH){	
+	while(BTN_SW4 == LOGIC_HIGH){	
 		delayDoing(1, seven_segmentDisplayDecimal, 1234);
 	}
 	seven_segmentDisable();
@@ -129,7 +129,7 @@ void testDelayDoing(void){
 }
 
 void testDelaySecondDoing(void){
-	while(switch4 == LOGIC_HIGH){	
+	while(BTN_SW4 == LOGIC_HIGH){	
 		delaySecondDoing(TMR_CTR1, 1, seven_segmentDisplayDecimal, 5678);
 	}
 	seven_segmentDisable();
