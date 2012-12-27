@@ -133,10 +133,10 @@ Timer_or_counter.c
 		bit selection
 			/* 選擇設定哪一個計時器(timer)／計數器(counter) */){
 		if(selection == TMR_CTR1){
-			tmr_ctr1_overflow = LOGIC_LOW;
+			tmr_ctr1_overflowed = LOGIC_LOW;
 			tmr_ctr1_run = LOGIC_HIGH;
 		}else{
-			tmr_ctr0_overflow = LOGIC_LOW;
+			tmr_ctr0_overflowed = LOGIC_LOW;
 			tmr_ctr0_run = LOGIC_HIGH;
 		}
 		return;
@@ -148,10 +148,10 @@ Timer_or_counter.c
 			/* 選擇設定哪一個計時器(timer)／計數器(counter) */){
 		if(selection == TMR_CTR1){
 			tmr_ctr1_run = LOGIC_LOW;
-			tmr_ctr1_overflow = LOGIC_LOW;
+			tmr_ctr1_overflowed = LOGIC_LOW;
 		}else{
 			tmr_ctr0_run = LOGIC_LOW;
-			tmr_ctr0_overflow = LOGIC_LOW;
+			tmr_ctr0_overflowed = LOGIC_LOW;
 		}
 		return;
 	}
@@ -159,17 +159,17 @@ Timer_or_counter.c
 	bit/* boolean */ tmr_ctrIsOverflow(
 		bit selection){
 		if(selection == TMR_CTR1){
-			return tmr_ctr1_overflow;
+			return tmr_ctr1_overflowed;
 		}else{
-			return tmr_ctr0_overflow;
+			return tmr_ctr0_overflowed;
 		}
 	}
 
 	void tmr_ctrClearOverflow(bit selection){
 		if(selection == TMR_CTR1){
-			tmr_ctr1_overflow = LOGIC_LOW;
+			tmr_ctr1_overflowed = LOGIC_LOW;
 		}else{
-			tmr_ctr0_overflow = LOGIC_LOW;
+			tmr_ctr0_overflowed = LOGIC_LOW;
 		}
 		return;
 	}

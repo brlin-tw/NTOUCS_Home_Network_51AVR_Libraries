@@ -65,7 +65,7 @@ void main(void){
 
 void initializeSystem(){
 	/* 清空 LED 輸出 */
-		LED = 0xFF;
+		led = 0xFF;
 	/* 停用 ADC 的輸出 */
 		adc_chip_select_bar_read_bar = LOGIC_HIGH;
 	/* 停用 DIP 的輸出 */
@@ -75,7 +75,7 @@ void initializeSystem(){
 	/* 停用 LCD 的暫存器輸入 */
 		lcd_read_write_bar = LOGIC_HIGH;
 	/* 停用 7 段顯示器 */
-		SEVEN_SEG = 0x00;
+		seven_seg = 0x00;
 		/* 關閉數位顯示開關 */
 			seven_seg_latch_position_enable = LOGIC_HIGH;
 			seven_seg_latch_position_enable = LOGIC_LOW;
@@ -98,7 +98,7 @@ void testTimerMode1(bit timer){
 		unsigned char period_count = 0;
 		unsigned char led_pattern = LED_ODD;
 			
-		while(switch4 != LOGIC_LOW){
+		while(BTN_SW4 != LOGIC_LOW){
 			if(tmr_ctrIsOverflow(timer) == TRUE){
 				period_count++;
 				timerSetPeriod16bit(timer, TMR_16B_11_0592_MHZ_1S_PERIOD);
@@ -125,7 +125,7 @@ void testTimerMode2(bit timer){
 		unsigned int period_count = 0;
 		unsigned char led_pattern = LED_ODD;
 			
-		while(switch4 != LOGIC_LOW){
+		while(BTN_SW4 != LOGIC_LOW){
 			if(tmr_ctrIsOverflow(timer) == TRUE){
 				period_count++;
 				timerSetPeriodMode2(timer, TMR_8B_11_0952_MHZ_1S_PERIOD);
