@@ -92,9 +92,9 @@
 				#define tmr_ctr0_overflowed TF0
 				#define tmr_ctr0_run TR0
 				
-				#define EXT_INT1_TRIGGERED IE1
+				#define ext_int1_triggered IE1
 				#define ext_int1_type IT1
-				#define EXT_INT0_TRIGGERED IE0
+				#define ext_int0_triggered IE0
 				#define ext_int0_type IT0
 			
 			/* TMOD(Timer/counter MODe control register) 暫存器 */
