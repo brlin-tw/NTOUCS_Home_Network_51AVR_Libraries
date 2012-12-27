@@ -72,8 +72,8 @@
 		
 		/* 計時器(timer)／計數器(counter)與外部中斷 */
 			/* 計時器(timer)／計數器(counter)外部訊號輸入 */
-				#define tmr_ctr1_ext_src T1
-				#define tmr_ctr0_ext_src T0
+				#define ctr1_ext_src T1
+				#define ctr0_ext_src T0
 				
 			/* 外部中斷輸入 */
 				#define ext_interrupt1_bar INT1
