@@ -100,7 +100,45 @@
 			/* TMOD(Timer/counter MODe control register) 暫存器 */
 				#define tmr_ctr_mode TMOD
 			
-		/* RS-232 連接埠定義 */
+		/* Serial UART 定義 */
+			/* Serial port CONtrol register */
+				#define serial_uart_control SCON
+				
+				/* 模式選擇：實際上代表模式 serial_mode0|serial_mode0 ，與習慣相反 */
+					#define serial_mode0 SM0
+					#define serial_mode1 SM1
+				#define serial_mode2 SM2
+				#define serial_recieve_enable REN
+				#define serial_trans_interrupt TI
+				#define serial_recv_interrupt RI
+			
+			/* Serial UART BUFfer register */
+				#define serial_buffer_reg SBUF
+			
+		/* Power CONtrol register */
+			#define power_control_reg PCON
+		
+		/* Interrupt Enable(IE) register */
+			#define int_enable_all EA
+			
+			#define int_tmr_ctr2_enable ET2
+			#define int_tmr_ctr1_enable ET1
+			#define int_tmr_ctr0_enable ET0
+			
+			#define int_serial_uart_enable ES
+			
+			#define int_ext1_enable_bar EX1
+			#define int_ext0_enable_bar EX0
+			
+		/* Interrupt Priority(IP) register */
+			#define int_pri_tmr_ctr2_enable PT2
+			#define int_pri_tmr_ctr1_enable PT1
+			#define int_pri_tmr_ctr0_enable PT0
+			
+			#define int_pri_serial_uart_enable PS
+			
+			#define int_pri_ext1_enable_bar PX1
+			#define int_pri_ext0_enable_bar PX0
 			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
