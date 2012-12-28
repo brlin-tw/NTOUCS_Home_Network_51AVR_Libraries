@@ -59,7 +59,7 @@ void main(void){
 
 void initializeSystem(){
 	/* 清空 LED 輸出 */
-		LED = 0xFF;
+		led = 0xFF;
 	/* 停用 ADC 的輸出 */
 		adc_chip_select_bar_read_bar = LOGIC_HIGH;
 	/* 停用 DIP 的輸出 */
@@ -69,7 +69,7 @@ void initializeSystem(){
 	/* 停用 LCD 的暫存器輸入 */
 		lcd_read_write_bar = LOGIC_HIGH;
 	/* 停用 7 段顯示器 */
-		SEVEN_SEG = 0x00;
+		seven_seg = 0x00;
 		/* 關閉數位顯示開關 */
 			seven_seg_latch_position_enable = LOGIC_HIGH;
 			seven_seg_latch_position_enable = LOGIC_LOW;
@@ -83,13 +83,13 @@ void initializeSystem(){
 void testSevenSegmentDisplayDecimal(void){
 	unsigned int count = 0;
 	unsigned int i;
-	while(switch4 == LOGIC_HIGH){
+	while(BTN_SW4 == LOGIC_HIGH){
 		seven_segmentDisplayDecimal(count); 
 	}
 	seven_segmentDisable();
 	delay(65535);
 	for(; count <= 9999; ++count){
-		if(switch4 == LOGIC_LOW){
+		if(BTN_SW4 == LOGIC_LOW){
 			break;
 		}
 		for(i = 0; i < DISPLAY_INTERVAL; ++i){
@@ -104,7 +104,7 @@ void testSevenSegmentDisplayDecimal(void){
 void testSevenSegmentDisplayPoint(void){
 	unsigned char scan;
 	delay(65535);
-	while(switch4 == LOGIC_HIGH){
+	while(BTN_SW4 == LOGIC_HIGH){
 		for(scan = 0; scan < SEVEN_SEG_DIGIT_NO; ++scan){
 			seven_segmentWritePositionFont(SEVEN_SEGMENT_FONT_POINT);			
 			seven_segmentWritePosition(seven_segment_scan_position[scan]);
@@ -118,13 +118,13 @@ void testSevenSegmentDisplayPoint(void){
 void testSevenSegmentDisplayOctal(void){
 	unsigned int count = 0;
 	unsigned int i;
-	while(switch4 == LOGIC_HIGH){
+	while(BTN_SW4 == LOGIC_HIGH){
 		seven_segmentDisplayOctal(count); 
 	}
 	seven_segmentDisable();
 	delay(65535);
 	for(; count <= 65535; ++count){
-		if(switch4 == LOGIC_LOW){
+		if(BTN_SW4 == LOGIC_LOW){
 			break;
 		}
 		for(i = 0; i < DISPLAY_INTERVAL; ++i){
