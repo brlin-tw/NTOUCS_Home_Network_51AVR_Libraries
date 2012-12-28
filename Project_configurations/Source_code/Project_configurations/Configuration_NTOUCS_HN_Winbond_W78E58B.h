@@ -109,8 +109,8 @@
 					#define serial_mode1 SM1
 				#define serial_mode2 SM2
 				#define serial_recieve_enable REN
-				#define SRL_TX_INT_TRIGGERED TI
-				#define SRL_RX_INT_TRIGGERED RI
+				#define srl_tx_int_triggered TI
+				#define srl_rx_int_triggered RI
 			
 			/* Serial UART BUFfer register */
 				#define serial_buffer_reg SBUF
