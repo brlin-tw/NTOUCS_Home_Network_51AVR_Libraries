@@ -23,8 +23,12 @@ LED.c
 
 /*||||| 主要程式碼 | Main Code |||||*/
 void ledDisplayValue(unsigned char value){
-	/* 實際上 LED 將邏輯 LOW 訊號視為發光，所以將反向之後再填進去 */
-	led = ~value;
+	if(LED_LIT == LOGIC_HIGH){
+		led = value;
+	}else{
+		/* 目標電路的 LED 於邏輯 LOW 時發光，所以將值反向之後再填進去 */
+		led = ~value;
+	}
 	return;
 }
 

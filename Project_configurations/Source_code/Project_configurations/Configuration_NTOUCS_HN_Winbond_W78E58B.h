@@ -33,11 +33,16 @@
 		   　http://www.keil.com/support/man/docs/c51/c51_le_sfrs.htm */
 			#include <reg52.h>
 		
+		/* for LOGIC_* signal definition */
+			#include "Common_definitions.h"
+			
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* 8 位元 LED
 			 　連接至 W78E58B 的 P1 連接埠*/
 			#define led P1
-		
+				/* led 電位為何才會讓燈亮？ */
+					#define LED_LIT LOGIC_LOW
+			
 		/* 按鈕開關 */
 			sbit BTN_SW3 = P3^2;
 			sbit BTN_SW4 = P3^3;
