@@ -122,7 +122,8 @@ void testDelaySecond(bit timer){
 
 void testDelayDoing(void){
 	while(BTN_SW4 == LOGIC_HIGH){	
-		delayDoing(1, seven_segmentDisplayDecimal, 1234);
+		delayDoing(3000, seven_segmentDisplayDecimal, 1234);
+		delayDoing(3000, seven_segmentDisplayDecimal, 4321);
 	}
 	seven_segmentDisable();
 	return;
@@ -130,7 +131,8 @@ void testDelayDoing(void){
 
 void testDelaySecondDoing(void){
 	while(BTN_SW4 == LOGIC_HIGH){	
-		delaySecondDoing(TMR_CTR1, 1, seven_segmentDisplayDecimal, 5678);
+		delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 5678);
+		delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 8765);
 	}
 	seven_segmentDisable();
 	return;
