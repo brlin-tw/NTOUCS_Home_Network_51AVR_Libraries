@@ -18,6 +18,19 @@ main.c
 	/* for LED control procedures*/
 		#include "LED/LED.h"
 	
+	/* for Flow_of_control procedures */
+		#include "Flow_of_control/Delay.h"
+		#include "Flow_of_control/Hang.h"
+		
+	/* for TMR_CTR* */
+		#include "Timer_or_counter/Timer_or_counter.h"
+	
+	/* for button switch access procedures */
+		#include "Button_switch/Button_switch.h"
+	
+	/* 為了７段顯示器的定義 */
+		#include "Seven_segment_display/Seven_segment_display.h"
+		
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -26,6 +39,9 @@ main.c
 	/* 初始化硬體（關掉所有元件）的函式 */
 		void initializeSystem();
 
+	/* 測試子程式 */
+		void testAdcGetValue(void);
+		
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -36,8 +52,14 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
-		ledDisplayValue(adcGetValue());
+		testAdcGetValue();
 		
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		delaySecond(TMR_CTR0, 1);		
+		ledDisplayValue(LED_ALL);
+		hangForever();
 	}
 	
 	return;
@@ -54,9 +76,34 @@ void initializeSystem(){
 		lcd_enable = LOGIC_LOW;
 	/* 停用 LCD 的暫存器輸入 */
 		lcd_read_write_bar = LOGIC_HIGH;
-	/* 停用 7 段顯示器的輸入 */
+	/* 停用 7 段顯示器 */
 		seven_seg = 0x00;
-		seven_seg_latch_position_enable = LOGIC_HIGH;
-		seven_seg_latch_position_enable = LOGIC_LOW;
+		/* 關閉數位顯示開關 */
+			seven_seg_latch_position_enable = LOGIC_HIGH;
+			seven_seg_latch_position_enable = LOGIC_LOW;
+			delay(400);
+		/* 清空數位字型內容 */
+			seven_seg_latch_font_enable = LOGIC_HIGH;
+			seven_seg_latch_font_enable = LOGIC_LOW;
+	/* 停用計時器(timer)／計數器(counter) */
+		tmr_ctr1_run = LOGIC_LOW;
+		tmr_ctr0_run = LOGIC_LOW;
+}
+
+void testAdcGetValue(void){
+	unsigned char recieved;
+	
+	while(FALSE == button_swIsPressed(BTN_SW4)){
+		unsigned int i;
+		
+		adcEnable();
+		recieved = adcGetValue();
+		adcDisable();
+		for(i = 0; i < 200; ++i){ 
+			seven_segmentDisplayDecimal(recieved);
+		}
+		seven_segmentDisable();
+		delaySecond(TMR_CTR0, 1);
+	}
 	return;
 }

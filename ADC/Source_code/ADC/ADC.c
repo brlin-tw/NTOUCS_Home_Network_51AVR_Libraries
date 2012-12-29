@@ -18,14 +18,22 @@ ADC.c
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
+void adcDisable(void){
+	adc_chip_select_bar_read_bar = LOGIC_HIGH;
+	return;
+}
+
+void adcEnable(void){
+	adc_chip_select_bar_read_bar = LOGIC_LOW;
+	return;
+}
+
 unsigned char adcGetValue(
 	/* 獲取 ADC 的數值 */
 	void){
 	unsigned char recieve;
 		
-	adc_chip_select_bar_read_bar = LOGIC_LOW;
 	recieve = ADC;
-	adc_chip_select_bar_read_bar = LOGIC_HIGH;
 		
 	return recieve;
 }

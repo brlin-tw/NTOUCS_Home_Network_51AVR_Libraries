@@ -33,16 +33,23 @@
 		   　http://www.keil.com/support/man/docs/c51/c51_le_sfrs.htm */
 			#include <reg52.h>
 		
+		/* for LOGIC_* signal definition */
+			#include "Common_definitions.h"
+			
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* 8 位元 LED
 			 　連接至 W78E58B 的 P1 連接埠*/
 			#define led P1
-		
+				/* led 電位為何才會讓燈亮？ */
+					#define LED_LIT LOGIC_LOW
+			
 		/* 按鈕開關 */
 			sbit BTN_SW3 = P3^2;
 			sbit BTN_SW4 = P3^3;
 			sbit BTN_SW5 = P3^4;
 			sbit BTN_SW6 = P3^5;
+			
+			#define BTN_SW_PRESSED LOGIC_LOW
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
@@ -86,15 +93,15 @@
 				#define tmr_ctr0_reg_low TL0
 
 			/* TCON(Timer/counter CONtrol register) 暫存器 */
-				#define TMR_CTR1_OVERFLOWED TF1
+				#define tmr_ctr1_overflowed TF1
 				#define tmr_ctr1_run TR1
 				
-				#define TMR_CTR0_OVERFLOWED TF0
+				#define tmr_ctr0_overflowed TF0
 				#define tmr_ctr0_run TR0
 				
-				#define EXT_INT1_TRIGGERED IE1
+				#define ext_int1_triggered IE1
 				#define ext_int1_type IT1
-				#define EXT_INT0_TRIGGERED IE0
+				#define ext_int0_triggered IE0
 				#define ext_int0_type IT0
 			
 			/* TMOD(Timer/counter MODe control register) 暫存器 */
@@ -109,8 +116,8 @@
 					#define serial_mode1 SM1
 				#define serial_mode2 SM2
 				#define serial_recieve_enable REN
-				#define SRL_TX_INT_TRIGGERED TI
-				#define SRL_RX_INT_TRIGGERED RI
+				#define srl_tx_int_triggered TI
+				#define srl_rx_int_triggered RI
 			
 			/* Serial UART BUFfer register */
 				#define serial_buffer_reg SBUF

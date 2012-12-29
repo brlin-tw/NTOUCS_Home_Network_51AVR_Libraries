@@ -34,6 +34,9 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		void adcDisable(void);
+		void adcEnable(void);
+			
 		unsigned char adcGetValue(
 			/* 獲取 ADC 的數值 */
 			void);
