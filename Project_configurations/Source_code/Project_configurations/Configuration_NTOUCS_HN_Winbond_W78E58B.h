@@ -49,6 +49,8 @@
 			sbit BTN_SW5 = P3^4;
 			sbit BTN_SW6 = P3^5;
 			
+			#define BTN_SW_PRESSED LOGIC_LOW
+			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
 			sbit adc_chip_select_bar_read_bar = P2^6;
