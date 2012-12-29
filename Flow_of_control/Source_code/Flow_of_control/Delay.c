@@ -32,7 +32,7 @@ void delay(unsigned int time){
 }
 
 void delayDoing(
-	/* 延遲並於該時段中執行特定功能 */
+	/* 延遲並於該時段中持續不斷地執行特定功能 */
 	unsigned int time, 
 	void (*doing)(unsigned int param1), 
 	unsigned int param1){
@@ -73,7 +73,7 @@ void delaySecond(
 }
 
 void delaySecondDoing(
-	/* 延遲（單位：秒）並於該時段中執行特定功能 */
+	/* 延遲（單位：秒）並於該時段中持續不斷地執行特定功能 */
 	bit timer, 
 		/* 用來計時的 timer */
 	unsigned int time
@@ -97,7 +97,6 @@ void delaySecondDoing(
 		if(period_count == TMR_8B_11_0952_MHZ_1S_COUNT){
 			period_count = 0;
 			time--;
-			
 		}
 		(*doing)(param1);
 	}
