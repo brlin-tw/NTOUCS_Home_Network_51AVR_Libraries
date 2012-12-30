@@ -41,7 +41,8 @@
 	void delay(unsigned int time);
 	
 	void delayDoing(
-		/* 延遲並於該時段中持續不斷地執行特定功能 */
+		/* 延遲並於該時段中持續不斷地執行特定功能
+		   **目前損壞** */
 		unsigned int time, 
 		void (*doing)(unsigned int param1), 
 		unsigned int param1);
@@ -54,7 +55,8 @@
 			/* 延遲時距 */);
 
 	void delaySecondDoing(
-		/* 延遲（單位：秒）並於該時段中持續不斷地執行特定功能 */
+		/* 延遲（單位：秒）並於該時段中持續不斷地執行特定功能
+		   **目前損壞** */
 		bit timer, 
 			/* 用來計時的 timer */
 		unsigned int time
