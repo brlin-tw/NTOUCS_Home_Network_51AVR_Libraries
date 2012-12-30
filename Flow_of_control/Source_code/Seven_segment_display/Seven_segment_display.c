@@ -103,13 +103,10 @@ Seven_segment_display.c
 		unsigned int value
 			/* 顯示的數值(0 ~ power(10, SEVEN_SEG_DIGIT_NO) - 1 */){
 		unsigned char i;
-		unsigned char digit;
-			
+		
 		/* 每個數位掃描一遍 */
 			for(i = 0; i < SEVEN_SEG_DIGIT_NO; ++i){
-				digit = value % 10;
-				
-				seven_segmentWritePositionFont(seven_segment_font_digits[digit]);
+				seven_segmentWritePositionFont(seven_segment_font_digits[value % 10]);
 				seven_segmentWritePosition(seven_segment_scan_position[i]);
 				/* 等數位掃描電路切換 */
 					delay(SEVEN_SEGMENT_SCAN_DELAY);

@@ -45,7 +45,7 @@ main.c
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
 	initialize8051();
-	
+
 	/* main loop */
 	while(TRUE){
 		/* ledDisplayValue(LED_ALL);
@@ -123,8 +123,8 @@ void testDelayDoing(void){
 	while(BTN_SW4 == LOGIC_HIGH){	
 		/* delayDoing(10000, ledDisplayValue, LED_HALF_UP);
 		delayDoing(10000, ledDisplayValue, LED_HALF_DOWN); */
-		delayDoing(10000, seven_segmentDisplayDecimal, 1234);
-		delayDoing(10000, seven_segmentDisplayDecimal, 4321);
+		delayDoing(10000, seven_segmentDisplayOctal, 1234);
+		delayDoing(10000, seven_segmentDisplayOctal, 4321);
 	}
 	seven_segmentDisable();
 	return;
