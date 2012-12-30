@@ -60,7 +60,8 @@
 			#define DIP_SW P0
 			sbit dip_sw_chip_enable_bar = P2^5;
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
-		
+			#define DIP_SW_ON LOGIC_LOW
+			
 		/* 液晶螢幕(LCD) */
 			sbit lcd_enable = P2^2;
 				/* 啟用 LCD 訊號 */

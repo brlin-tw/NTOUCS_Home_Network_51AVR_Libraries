@@ -3,7 +3,7 @@ DIP_switch.c
 	請見本檔案的 header 檔案以得到更多關於本檔案的說明
 */
 /*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-	#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+	#include "../Project_configurations/Common_definitions.h"
 	#include "../Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
 	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
@@ -20,8 +20,12 @@ DIP_switch.c
 		unsigned char recieved;
 			
 		dip_sw_chip_enable_bar = LOGIC_LOW;
-		recieved = ~DIP_SW;
+		if(DIP_SW_ON == LOGIC_HIGH){
+			recieved = DIP_SW;
+		}else{
 			/* OFF 時讀到 HIGH，ON 時讀到 LOW，把數值反向回來 */
+				recieved = ~DIP_SW;
+		}
 		dip_sw_chip_enable_bar = LOGIC_HIGH;
 			
 		return recieved;
