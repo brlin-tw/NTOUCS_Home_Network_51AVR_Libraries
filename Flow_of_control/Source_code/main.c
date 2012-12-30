@@ -48,23 +48,23 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
+		/* ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
+		testDelaySecond(TMR_CTR0); */
+		
+		/* ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
+		testDelaySecond(TMR_CTR1); */
+		
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
 		
-		testDelaySecond(TMR_CTR0);
-		
-		ledDisplayValue(LED_ALL);
-		delaySecond(TMR_CTR0, 1);
-		ledDisplayValue(LED_NONE);
-		
-		testDelaySecond(TMR_CTR1);
-		
-		ledDisplayValue(LED_ALL);
-		delaySecond(TMR_CTR0, 1);
-		ledDisplayValue(LED_NONE);
-		
-		testDelayDoing();
+		testDelayDoing();	
 		
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
@@ -72,9 +72,8 @@ void main(void){
 		
 		testDelaySecondDoing();
 
+		/* test ended */
 		ledDisplayValue(LED_ALL);
-		delaySecond(TMR_CTR0, 1);
-		ledDisplayValue(LED_NONE);		
 		hangForever();
 		
 	}
@@ -122,8 +121,10 @@ void testDelaySecond(bit timer){
 
 void testDelayDoing(void){
 	while(BTN_SW4 == LOGIC_HIGH){	
-		delayDoing(3000, seven_segmentDisplayDecimal, 1234);
-		delayDoing(3000, seven_segmentDisplayDecimal, 4321);
+		/* delayDoing(10000, ledDisplayValue, LED_HALF_UP);
+		delayDoing(10000, ledDisplayValue, LED_HALF_DOWN); */
+		delayDoing(10000, seven_segmentDisplayDecimal, 1234);
+		delayDoing(10000, seven_segmentDisplayDecimal, 4321);
 	}
 	seven_segmentDisable();
 	return;
@@ -131,8 +132,10 @@ void testDelayDoing(void){
 
 void testDelaySecondDoing(void){
 	while(BTN_SW4 == LOGIC_HIGH){	
-		delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 5678);
-		delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 8765);
+		delaySecondDoing(TMR_CTR1, 2, ledDisplayValue, LED_ODD);
+		delaySecondDoing(TMR_CTR1, 2, ledDisplayValue, LED_EVEN);
+		/* delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 5678);
+		delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 8765); */
 	}
 	seven_segmentDisable();
 	return;
