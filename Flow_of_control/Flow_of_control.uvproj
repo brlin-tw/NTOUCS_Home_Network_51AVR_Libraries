@@ -414,11 +414,6 @@
               <FileType>5</FileType>
               <FilePath>.\Source_code\Project_configurations\Common_definitions.h</FilePath>
             </File>
-            <File>
-              <FileName>Configuration_NTOUCS_HN_Winbond_W78E58B.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Source_code\Project_configurations\Configuration_NTOUCS_HN_Winbond_W78E58B.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -448,6 +443,21 @@
               <FileName>Seven_segment_display.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Source_code\Seven_segment_display\Seven_segment_display.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Hardware_configurations</GroupName>
+          <Files>
+            <File>
+              <FileName>NTOUCS_Home_Network_51AVR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source_code\Hardware_configurations\NTOUCS_Home_Network_51AVR.c</FilePath>
+            </File>
+            <File>
+              <FileName>NTOUCS_Home_Network_51AVR.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Hardware_configurations\NTOUCS_Home_Network_51AVR.h</FilePath>
             </File>
           </Files>
         </Group>

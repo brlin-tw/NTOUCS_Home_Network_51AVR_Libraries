@@ -82,7 +82,7 @@
 		void ledDisplayValue(unsigned char value);
 			/* 顯示數值至 LED
 				 　value
-				 　　要顯示的 8 位元數值，LOGIC_HIGH 代表發光 */
+				 　　要顯示的 8 位元數值，統一假設 LOGIC_HIGH 代表發光 */
 
 		/* 輪轉(rotate)相關函式 */
 			#define LED_ROTATE_UP 1

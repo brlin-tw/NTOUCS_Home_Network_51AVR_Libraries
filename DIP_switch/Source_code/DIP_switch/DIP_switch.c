@@ -4,7 +4,7 @@ DIP_switch.c
 */
 /*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 	#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
-	#include "../Project_configurations/Common_definitions.h"
+	#include "../Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
 	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 

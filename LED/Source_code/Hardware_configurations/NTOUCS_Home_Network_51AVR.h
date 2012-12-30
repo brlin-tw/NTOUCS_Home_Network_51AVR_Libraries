@@ -1,6 +1,6 @@
-/* Configurations_NTOUCS_HN_Winbond_W78E58B.h
+/* NTOUCS_Home_Network_51AVR.h
 程式名稱 | Program name
-	Configurations(control signals, ports, and other values of NTOUCS Home Network Winbond W78E58B development board.
+	Configurations(control signals, ports, and other values of NTOUCS Home Network 51AVR development board.
 更新紀錄 | Changelog
 	Changelog is now stored on GitHub(http://www.github.com)
 已知問題 | Known issues
@@ -10,7 +10,7 @@
 著作權宣告 | Copyright declaration
 	Copyright 2012 林博仁(Henry Lin, pika1021@gmail.com)
 智慧財產授權條款：
-	Ports and control signals definition of NTOUCS Home Network Winbond W78E58B development board is part of NTOUCS_Home_Network_W78E58B_board_libraries
+	Configurations(control signals, ports, and other values of NTOUCS Home Network 51AVR development board is part of NTOUCS_Home_Network_W78E58B_board_libraries
 	NTOUCS_Home_Network_W78E58B_board_libraries is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 	
 	NTOUCS_Home_Network_W78E58B_board_libraries is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
@@ -18,8 +18,8 @@
 	You should have received a copy of the GNU Lesser General Public License along with NTOUCS_Home_Network_W78E58B_board_libraries.  If not, see <http://www.gnu.org/licenses/>.
 */
 /* include guard：避免同一個 header 檔案被 include 第二次 */
-#ifndef NTOUCS_HN_W78E58B_DEF_INCLUDED
-	#define NTOUCS_HN_W78E58B_DEF_INCLUDED
+#ifndef NTOUCS_HN_51AVR_INCLUDED
+	#define NTOUCS_HN_51AVR_INCLUDED
 	/* 如果是 C++ 編譯器則停用 C++ 特有的函式名稱 mangling*/
 	#ifdef __cplusplus
 		extern "C"{
@@ -34,7 +34,7 @@
 			#include <reg52.h>
 		
 		/* for LOGIC_* signal definition */
-			#include "Common_definitions.h"
+			#include "../Project_configurations/Common_definitions.h"
 			
 	/*||||| 常數與巨集 | Constants & Macros |||||*/
 		/* 8 位元 LED
@@ -150,10 +150,13 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		void disableAllUnit(
+			/* 停用所有元件輸出的函式 */
+				void);
 
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus
 		}
 	#endif
-#endif /* NTOUCS_HN_W78E58B_DEF_INCLUDED */
+#endif

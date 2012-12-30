@@ -4,8 +4,8 @@ Seven_segment_display.c
 */
 /*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
 	/* ports definitions */
-		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
-	
+		#include "../Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
+		
 	/* for logic signals */
 		#include "../Project_configurations/Common_definitions.h"
 		
@@ -103,10 +103,13 @@ Seven_segment_display.c
 		unsigned int value
 			/* 顯示的數值(0 ~ power(10, SEVEN_SEG_DIGIT_NO) - 1 */){
 		unsigned char i;
-		
+		unsigned char digit;
+			
 		/* 每個數位掃描一遍 */
 			for(i = 0; i < SEVEN_SEG_DIGIT_NO; ++i){
-				seven_segmentWritePositionFont(seven_segment_font_digits[value % 10]);
+				digit = value % 10;
+				
+				seven_segmentWritePositionFont(seven_segment_font_digits[digit]);
 				seven_segmentWritePosition(seven_segment_scan_position[i]);
 				/* 等數位掃描電路切換 */
 					delay(SEVEN_SEGMENT_SCAN_DELAY);

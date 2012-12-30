@@ -8,7 +8,7 @@ LED.c
 	#include "../Project_configurations/Common_definitions.h"
 		/* for C true */
 	/* Target device configurations */
-		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+		#include "../Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
 
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 

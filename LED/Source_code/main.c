@@ -10,7 +10,7 @@ main.c
 	#include "Project_configurations/Common_definitions.h"
 
 /* Target device configurations */
-	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+	#include "Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
 
 /* for LED operations */
 	#include "LED/LED.h"
@@ -40,7 +40,7 @@ main.c
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	initialize();
+	disableAllUnit();
 	
 	/* main loop */
 	while(TRUE){
@@ -51,18 +51,6 @@ void main(void){
 		hangForever();
 	}
 	
-	return;
-}
-
-void initialize(){
-	/* 停用 ADC 的輸出 */
-		adc_chip_select_bar_read_bar = LOGIC_HIGH;
-	/* 停用 DIP 的輸出 */
-		dip_sw_chip_enable_bar = LOGIC_HIGH;
-	/* 停用 LCD */
-		lcd_enable = LOGIC_LOW;
-	/* disable LCD register write */
-		lcd_read_write_bar = LOGIC_HIGH;
 	return;
 }
 

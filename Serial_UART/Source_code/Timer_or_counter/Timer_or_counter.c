@@ -3,9 +3,9 @@ Timer_or_counter.c
 	請見本檔案的 header 檔案以得到更多關於本檔案的說明
 */
 /*||||| 程式所 include 之函式庫的標頭檔 | Included Library Headers |||||*/
-	/* 目標微控制器的 SFR 暫存器定義 */
-		#include "../Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
-
+	/* Hardware_configurations */
+		#include "../Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
+		
 	/* for LOGIC_* definition */
 		#include "../Project_configurations/Common_definitions.h"
 		

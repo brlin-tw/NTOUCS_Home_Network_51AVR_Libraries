@@ -12,8 +12,10 @@
 
 /* Project_configurations */
 	#include "Project_configurations/Common_definitions.h"
-	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
-
+	
+/* Hardware_configurations */
+	#include "Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
+	
 /* Flow_of_control procedures definitions */
 	#include "Flow_of_control/Delay.h"
 	#include "Flow_of_control/Hang.h"

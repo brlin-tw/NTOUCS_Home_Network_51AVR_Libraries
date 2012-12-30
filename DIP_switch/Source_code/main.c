@@ -14,7 +14,7 @@
 	#include "Project_configurations/Common_definitions.h"
 
 /* Ports and control signals definitions */
-	#include "Project_configurations/Configuration_NTOUCS_HN_Winbond_W78E58B.h"
+	#include "Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
 
 /* Testing object */
 	#include "DIP_switch/DIP_switch.h"
@@ -27,8 +27,6 @@
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
-	/* 初始化硬體（關掉所有設備信號）的函式 */
-		void initializeSystem();
 
 /*||||| 全域變數 | Global Variables |||||*/
 
@@ -36,7 +34,7 @@
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	initializeSystem();
+	disableAllUnit();
 	
 	/* main loop */
 	while(TRUE){
@@ -47,14 +45,3 @@ void main(void){
 	return;
 }
 
-void initializeSystem(){
-	/* 啟用／停用 ADC 的輸入 */
-		adc_chip_select_bar_read_bar = LOGIC_HIGH;
-	/* 啟用／停用 DIP 的輸入 */
-		dip_sw_chip_enable_bar = LOGIC_HIGH;
-	/* 啟用／停用 LCD */
-		lcd_enable = LOGIC_LOW;
-	/* disable LCD register write */
-		lcd_read_write_bar = LOGIC_HIGH;
-	return;
-}
