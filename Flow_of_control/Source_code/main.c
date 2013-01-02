@@ -34,7 +34,7 @@ main.c
 		void testDelaySecond(bit timer);
 		void testDelayDoing(void);
 		void testDelaySecondDoing(void);
-		
+		void testDelay8bit(void);
 /*||||| 全域變數 | Global Variables |||||*/
 	
 /*||||| 主要程式碼 | Main Code |||||*/
@@ -59,7 +59,7 @@ void main(void){
 		
 		testDelaySecond(TMR_CTR1);
 #endif
-#if 1		
+#if 0
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
@@ -72,6 +72,13 @@ void main(void){
 		ledDisplayValue(LED_NONE);
 		
 		testDelaySecondDoing();
+#endif	
+#if 1
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
+		testDelay8bit();
 #endif	
 		/* test ended */
 		ledDisplayValue(LED_ALL);
@@ -113,5 +120,16 @@ void testDelaySecondDoing(void){
 		delaySecondDoing(TMR_CTR1, 3, seven_segmentDisplayDecimal, 8765); */
 	}
 	seven_segmentDisable();
+	return;
+}
+
+void testDelay8bit(void){
+	while(BTN_SW6 == LOGIC_HIGH){	
+		ledDisplayValue(LED_HALF_UP);
+		delay8bit(255);
+		ledDisplayValue(LED_HALF_DOWN);
+		delay8bit(255);
+	}
+	
 	return;
 }

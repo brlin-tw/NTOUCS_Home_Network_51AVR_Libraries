@@ -31,6 +31,17 @@ void delay(unsigned int time){
 	return;
 }
 
+void delay8bit(
+	/* 單純的倒數產生時間延遲的函式（8 位元版本）
+		 堆疊記憶體使用量：約 8 位元 */
+	unsigned char time
+		/* 延遲時距（最長可計時 255 個 for 迴圈周期） */){
+	while(time > 0){
+		time = time - 1;
+	}
+	return;
+}
+
 void delayDoing(
 	/* 延遲並於該時段中持續不斷地執行特定功能 */
 	unsigned int time, 
