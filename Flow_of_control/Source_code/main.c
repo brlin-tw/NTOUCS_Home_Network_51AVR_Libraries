@@ -66,14 +66,14 @@ void main(void){
 		
 		testDelayDoing();	
 #endif	
-#if 0	
+#if 0
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
 		
 		testDelaySecondDoing();
 #endif	
-#if 1
+#if 0
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);

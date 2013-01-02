@@ -58,7 +58,7 @@ void delaySecond(
 	/* 延遲（單位：秒） */
 	bit timer, 
 		/* 用來計時的 timer */
-	unsigned int time
+	unsigned char time
 		/* 延遲時距（單位：秒） */){
 	unsigned int period_count;
 			
@@ -87,7 +87,7 @@ void delaySecondDoing(
 	/* 延遲（單位：秒）並於該時段中持續不斷地執行特定功能 */
 	bit timer, 
 		/* 用來計時的 timer */
-	unsigned int time
+	unsigned char time
 		/* 延遲時距 */, 
 	void (*doing)(unsigned int param1), 
 	unsigned int param1){
