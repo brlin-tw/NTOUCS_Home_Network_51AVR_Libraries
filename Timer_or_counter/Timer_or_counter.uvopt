@@ -197,20 +197,6 @@
       <PathWithFileName>.\Source_code\Project_configurations\Common_definitions.h</PathWithFileName>
       <FilenameWithoutPath>Common_definitions.h</FilenameWithoutPath>
     </File>
-    <File>
-      <GroupNumber>2</GroupNumber>
-      <FileNumber>3</FileNumber>
-      <FileType>5</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>39</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>83</TopLine>
-      <CurrentLine>89</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\Source_code\Project_configurations\Configuration_NTOUCS_HN_Winbond_W78E58B.h</PathWithFileName>
-      <FilenameWithoutPath>Configuration_NTOUCS_HN_Winbond_W78E58B.h</FilenameWithoutPath>
-    </File>
   </Group>
 
   <Group>
@@ -348,12 +334,12 @@
 
   <Group>
     <GroupName>Hardware_configurations</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
-      <GroupNumber>0</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>12</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -366,8 +352,8 @@
       <FilenameWithoutPath>NTOUCS_Home_Network_51AVR.c</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>0</GroupNumber>
-      <FileNumber>0</FileNumber>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>13</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
