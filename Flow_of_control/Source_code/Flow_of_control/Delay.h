@@ -39,13 +39,6 @@
 		 　　延遲時距（單位：while 迴圈一次運行的時間）
 	*/
 	void delay(unsigned int time);
-	
-	void delayDoing(
-		/* 延遲並於該時段中持續不斷地執行特定功能
-		   已知問題：與７段顯示器的 seven_segmentDisplay*() 合併使用會發生記憶體竄改，請參閱 Issue #7 */
-		unsigned int time, 
-		void (*doing)(unsigned int param1), 
-		unsigned int param1);
 		
 	void delaySecond(
 		/* 延遲（單位：秒） */
@@ -53,6 +46,13 @@
 			/* 用來計時的 timer */
 		unsigned int time
 			/* 延遲時距 */);
+	
+	void delayDoing(
+		/* 延遲並於該時段中持續不斷地執行特定功能
+		   已知問題：與７段顯示器的 seven_segmentDisplay*() 合併使用會發生記憶體竄改，請參閱 Issue #7 */
+		unsigned int time, 
+		void (*doing)(unsigned int param1), 
+		unsigned int param1);
 
 	void delaySecondDoing(
 		/* 延遲（單位：秒）並於該時段中持續不斷地執行特定功能

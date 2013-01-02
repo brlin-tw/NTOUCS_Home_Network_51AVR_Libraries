@@ -45,30 +45,34 @@ void main(void){
 
 	/* main loop */
 	while(TRUE){
-		/* ledDisplayValue(LED_ALL);
+#if 0
+		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
 		
-		testDelaySecond(TMR_CTR0); */
-		
-		/* ledDisplayValue(LED_ALL);
+		testDelaySecond(TMR_CTR0);
+#endif
+#if 0		
+		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
 		
-		testDelaySecond(TMR_CTR1); */
-		
+		testDelaySecond(TMR_CTR1);
+#endif
+#if 1		
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
 		
 		testDelayDoing();	
-		
+#endif	
+#if 0	
 		ledDisplayValue(LED_ALL);
 		delaySecond(TMR_CTR0, 1);
 		ledDisplayValue(LED_NONE);
 		
 		testDelaySecondDoing();
-
+#endif	
 		/* test ended */
 		ledDisplayValue(LED_ALL);
 		hangForever();
