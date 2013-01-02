@@ -53,14 +53,21 @@
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
-			sbit adc_chip_select_bar_read_bar = P2^6;
-				/* 開啟 ADC 至 bus 輸出的訊號 */
+			/* 開啟 ADC 至 bus 輸出的訊號 */
+				sbit adc_chip_select_bar_read_bar = P2^6;
+				sbit adc_chip_select_bar = P2^6;
+				sbit adc_read_bar = P2^6;
+			/* 啟用 ADC 轉換的訊號 */
+				sbit adc_write_bar = P3^2;
+			/* 如果轉換完成 ADC 會將此信號設定為 LOGIC_LOW */
+				sbit ADC_INTERRUPT_BAR = P3^2;
 				
 		/* DIP 封裝指撥開關 */
 			#define DIP_SW P0
 			sbit dip_sw_chip_enable_bar = P2^5;
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
-		
+			#define DIP_SW_ON LOGIC_LOW
+			
 		/* 液晶螢幕(LCD) */
 			sbit lcd_enable = P2^2;
 				/* 啟用 LCD 訊號 */

@@ -18,22 +18,32 @@ ADC.c
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
-void adcDisable(void){
-	adc_chip_select_bar_read_bar = LOGIC_HIGH;
-	return;
-}
-
-void adcEnable(void){
-	adc_chip_select_bar_read_bar = LOGIC_LOW;
-	return;
-}
-
-unsigned char adcGetValue(
-	/* 獲取 ADC 的數值 */
-	void){
-	unsigned char recieve;
-		
-	recieve = ADC;
-		
-	return recieve;
-}
+	void adcStartConvert(
+		/* 讓 ADC 開始進行轉換的子程式
+			 　ADC 於 free running 模式需要有一段 
+					 chip_select_bar HIGH->LOW 
+					 write_bar HIGH->LOW->HIGH
+					 chip_select_bar LOW->HIGH
+				 才會開始轉換（資料文件 P.18） */ 
+		void){
+		adc_read_bar = adc_chip_select_bar = LOGIC_LOW;
+		adc_write_bar = LOGIC_HIGH;
+		adc_write_bar = LOGIC_LOW;
+		adc_write_bar = LOGIC_HIGH;
+		adc_read_bar = adc_chip_select_bar = LOGIC_HIGH;
+		return;
+	}
+	
+	unsigned char adcGetValue(
+		/* 獲取 ADC 的數值 */
+		void){
+		unsigned char recieve;
+			
+		/* Issue #8 一定要先洗匯流排，原因不明 */
+		ADC = 0xFF;
+			
+		adc_read_bar = adc_chip_select_bar = LOGIC_LOW;
+		recieve = ADC;
+		adc_read_bar = adc_chip_select_bar = LOGIC_HIGH;
+		return recieve;
+	}

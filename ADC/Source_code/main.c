@@ -68,14 +68,12 @@ void testAdcGetValue(void){
 	while(FALSE == button_swIsPressed(BTN_SW4)){
 		unsigned int i;
 		
-		adcEnable();
 		recieved = adcGetValue();
-		adcDisable();
-		for(i = 0; i < 200; ++i){ 
+		for(i = 0; i < 2; ++i){ 
 			seven_segmentDisplayDecimal(recieved);
 		}
 		seven_segmentDisable();
-		delaySecond(TMR_CTR0, 1);
+		delaySecond(TMR_CTR0, 0);
 	}
 	return;
 }

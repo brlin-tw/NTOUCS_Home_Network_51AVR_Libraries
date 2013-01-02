@@ -34,9 +34,17 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		/* 因為轉換結果輸出至恢復第3態時間很短所以直接跟 adcGetValue() 合併
 		void adcDisable(void);
-		void adcEnable(void);
-			
+		void adcEnable(void); */
+		void adcStartConvert(
+			/* 讓 ADC 開始進行轉換的子程式
+			   　ADC 於 free running 模式需要有一段 
+					   chip_select_bar HIGH->LOW 
+				     write_bar HIGH->LOW->HIGH
+						 chip_select_bar LOW->HIGH
+					 才會開始轉換 */
+			void);
 		unsigned char adcGetValue(
 			/* 獲取 ADC 的數值 */
 			void);
