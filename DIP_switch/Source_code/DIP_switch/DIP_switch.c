@@ -15,18 +15,30 @@ DIP_switch.c
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
+		void dip_swEnable(
+			/* 啟用 DIP 封裝開關對匯流排的輸出 */
+			void){
+			dip_sw_chip_enable_bar = LOGIC_LOW;
+			return;
+		}
+			
+		void dip_swDisable(
+			/* 停用 DIP 封裝開關對匯流排的輸出 */
+			void){
+			dip_sw_chip_enable_bar = LOGIC_HIGH;
+			return;
+		}
+			
 	unsigned char dip_swGetValue(
 		/* 取得 DIP 封裝開關的數值 */){
 		unsigned char recieved;
-			
-		dip_sw_chip_enable_bar = LOGIC_LOW;
+		
 		if(DIP_SW_ON == LOGIC_HIGH){
 			recieved = DIP_SW;
 		}else{
 			/* OFF 時讀到 HIGH，ON 時讀到 LOW，把數值反向回來 */
 				recieved = ~DIP_SW;
 		}
-		dip_sw_chip_enable_bar = LOGIC_HIGH;
 			
 		return recieved;
 	}

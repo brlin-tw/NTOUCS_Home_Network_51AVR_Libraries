@@ -38,8 +38,9 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
+		dip_swEnable();
 		ledDisplayValue(dip_swGetValue());
-		
+		dip_swDisable();
 	}
 	
 	return;

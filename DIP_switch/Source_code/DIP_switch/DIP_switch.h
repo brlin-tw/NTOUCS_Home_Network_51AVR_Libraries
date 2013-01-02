@@ -34,6 +34,12 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
+		void dip_swEnable(
+			/* 啟用 DIP 封裝開關對匯流排的輸出 */
+			void);
+		void dip_swDisable(
+			/* 停用 DIP 封裝開關對匯流排的輸出 */
+			void);
 		unsigned char dip_swGetValue(
 			/* 取得 DIP 封裝開關的數值 */);
 	/*||||| 全域變數 | Global Variables |||||*/
