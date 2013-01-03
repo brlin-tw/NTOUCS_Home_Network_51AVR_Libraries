@@ -71,6 +71,15 @@
 		void (*doing)(unsigned int param1), 
 		unsigned int param1);
 			
+	void delayOne16thSecondDoing(
+		/* 延遲（單位：1/16秒）並於該時段中持續不斷地執行特定功能 */
+		bit timer
+			/* 用來計時的 timer */, 
+		unsigned char time
+			/* 延遲時距（最大計時 255/16 = 15.* 秒） */, 
+		void (*doing)(unsigned int param1), 
+		unsigned int param1);
+		
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus

@@ -138,7 +138,7 @@
           <Type>0</Type>
           <LineNumber>134</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>-16774661</Address>
+          <Address>-16774412</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -154,7 +154,7 @@
           <Type>0</Type>
           <LineNumber>41</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>-16774465</Address>
+          <Address>-16773956</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -164,6 +164,22 @@
           <Filename>Source_code\Flow_of_control\DELAY.C</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\main\DELAY\41</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>102</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>-16774775</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>Source_code\Seven_segment_display\SEVEN_SEGMENT_DISPLAY.C</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\main\SEVEN_SEGMENT_DISPLAY\102</Expression>
         </Bp>
       </Breakpoint>
       <DebugFlag>
@@ -208,10 +224,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>72</TopLine>
-      <CurrentLine>81</CurrentLine>
+      <TopLine>51</TopLine>
+      <CurrentLine>45</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Source_code\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -257,10 +273,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>9</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>28</TopLine>
-      <CurrentLine>42</CurrentLine>
+      <TopLine>126</TopLine>
+      <CurrentLine>145</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Source_code\Flow_of_control\Delay.c</PathWithFileName>
       <FilenameWithoutPath>Delay.c</FilenameWithoutPath>
@@ -285,10 +301,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>18</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>36</TopLine>
-      <CurrentLine>48</CurrentLine>
+      <TopLine>72</TopLine>
+      <CurrentLine>74</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Source_code\Flow_of_control\Delay.h</PathWithFileName>
       <FilenameWithoutPath>Delay.h</FilenameWithoutPath>
@@ -334,10 +350,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>11</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>69</TopLine>
-      <CurrentLine>67</CurrentLine>
+      <TopLine>81</TopLine>
+      <CurrentLine>87</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Source_code\LED\LED.h</PathWithFileName>
       <FilenameWithoutPath>LED.h</FilenameWithoutPath>
@@ -390,10 +406,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>4</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>111</TopLine>
+      <CurrentLine>133</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Source_code\Timer_or_counter\Timer_or_counter.h</PathWithFileName>
       <FilenameWithoutPath>Timer_or_counter.h</FilenameWithoutPath>
@@ -413,8 +429,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>116</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>118</TopLine>
+      <CurrentLine>121</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Source_code\Seven_segment_display\Seven_segment_display.c</PathWithFileName>
       <FilenameWithoutPath>Seven_segment_display.c</FilenameWithoutPath>

@@ -56,6 +56,10 @@
 			#define TMR_8B_11_0952_MHZ_1S_COUNT 3600
 			/* 200 4608? */
 			
+		/* 用於 tmr_ctrSetValue8bit() */
+			#define TMR_CTR_REG_HIGH 1
+			#define TMR_CTR_REG_LOW 0
+			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
@@ -74,6 +78,14 @@
 			unsigned char low
 				/* 要填入暫存器的數值（0~255） */);
 
+		void tmr_ctrSetValue8bit(
+			/* 設定計時器(timer)／計數器(counter)內部暫存器（8位元） */
+			bit selection
+				/* 選擇哪一個計時器(timer)／計數器(counter) */, 
+			bit reg_half
+				/* 選擇哪半邊的暫存器 */, 
+			unsigned char value);
+			
 		void timerSetPeriod16bit(
 			/* 設定16位元計時器(timer)溢位(overflow)週期 */
 			bit selection

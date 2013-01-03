@@ -114,3 +114,31 @@ void delaySecondDoing(
 	tmr_ctrDisable(timer);
 	return;
 }
+
+void delayOne16thSecondDoing(
+	/* 延遲（單位：1/16秒）並於該時段中持續不斷地執行特定功能 */
+	bit timer
+		/* 用來計時的 timer */, 
+	unsigned char time
+		/* 延遲時距（最大計時 255/16 = 15.* 秒） */, 
+	void (*doing)(unsigned int param1), 
+	unsigned int param1){
+	/* 先停用可能開啟的 timer */
+		tmr_ctrDisable(timer);
+	tmr_ctrSetMode(timer, TMR_CTR_MODE1);
+	/* period = 921600hz / 16 = 57600hz */
+		tmr_ctrSetValue8bit(timer, TMR_CTR_REG_HIGH, 0x1F);
+	tmr_ctrSetValue8bit(timer, TMR_CTR_REG_LOW, 0x0);
+	tmr_ctrEnable(timer);
+		
+	while(time){
+		if(tmr_ctrIsOverflow(timer)){
+			tmr_ctrClearOverflow(timer);
+			tmr_ctrSetValue8bit(timer, TMR_CTR_REG_HIGH, 0x1F);
+			time--;
+		}
+		(*doing)(param1);
+	}
+	tmr_ctrDisable(timer);
+	return;
+}
