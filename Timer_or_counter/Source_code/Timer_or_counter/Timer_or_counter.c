@@ -51,7 +51,31 @@ Timer_or_counter.c
 		tmr_ctrSetValue16bit(selection, high * 256/* 2^8 */ + low);
 		return;
 	}
-
+	
+	void tmr_ctrSetValue8bit(
+		/* 設定計時器(timer)／計數器(counter)內部暫存器（8位元） */
+		bit selection
+			/* 選擇哪一個計時器(timer)／計數器(counter) */, 
+		bit reg_half
+			/* 選擇哪半邊的暫存器 */, 
+		unsigned char value){
+		if(selection == TMR_CTR1){
+			if(reg_half == TMR_CTR_REG_HIGH){
+				tmr_ctr1_reg_high = value;
+			}else{
+				tmr_ctr1_reg_low = value;
+			}
+		}else{
+			if(reg_half == TMR_CTR_REG_HIGH){
+				tmr_ctr0_reg_high = value;
+			}else{
+				tmr_ctr0_reg_low = value;
+			}
+		}
+			
+		return;
+	}
+	
 	void timerSetPeriod16bit(
 		/* 設定16位元計時器(timer)溢位(overflow)週期 */
 		bit selection
