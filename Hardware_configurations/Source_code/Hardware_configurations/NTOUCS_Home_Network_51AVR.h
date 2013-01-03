@@ -141,8 +141,8 @@
 			
 			#define int_serial_uart_enable ES
 			
-			#define int_ext1_enable_bar EX1
-			#define int_ext0_enable_bar EX0
+			#define int_ext1_enable EX1
+			#define int_ext0_enable EX0
 			
 		/* Interrupt Priority(IP) register */
 			#define int_pri_tmr_ctr2_enable PT2
@@ -151,8 +151,8 @@
 			
 			#define int_pri_serial_uart_enable PS
 			
-			#define int_pri_ext1_enable_bar PX1
-			#define int_pri_ext0_enable_bar PX0
+			#define int_pri_ext1_enable PX1
+			#define int_pri_ext0_enable PX0
 			
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
