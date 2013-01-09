@@ -68,14 +68,6 @@
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
 			#define DIP_SW_ON LOGIC_LOW
 			
-		/* 液晶螢幕(LCD) */
-			sbit lcd_enable = P2^2;
-				/* 啟用 LCD 訊號 */
-			sbit lcd_register_select = P2^0;
-				/* LCD 暫存器選擇信號 */
-			sbit lcd_read_write_bar = P2^1;
-				/* LCD 暫存器讀寫 */	
-		
 		/* 7 段顯示器 */
 			#define seven_seg P0
 			/* 7 段顯示器的數位數量 */
@@ -153,7 +145,15 @@
 			
 			#define int_pri_ext1_enable PX1
 			#define int_pri_ext0_enable PX0
-			
+		
+		/* 華凌光電 WINSTAR WH1602B-NBA-JT 2 x 20 文字型液晶顯示螢幕(LCD) */
+			/* 資料(LOGIC_HIGH)／指令(LOGIC_LOW)暫存器選擇訊號 */
+				sbit lcd_register_select = P2^0;
+			/* 資料讀取(LOGIC_HIGH)／寫入(LOGIC_LOW)控制訊號 */
+				sbit lcd_read_write_bar = P2^1;
+			/* 螢幕啟動訊號 */
+				sbit lcd_enable = P2^2;
+				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
