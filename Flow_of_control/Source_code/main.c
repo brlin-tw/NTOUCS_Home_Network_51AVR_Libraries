@@ -13,8 +13,9 @@ main.c
 		#include "Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
 		
 	/* Testing target */
-		#include "Flow_of_control/Delay.h"
-		#include "Flow_of_control/Hang.h"
+		/* #include "Flow_of_control/Delay.h"
+		   #include "Flow_of_control/Hang.h" */
+		#include "Flow_of_control/Flow_of_control.h"
 		
 	/* led functions */
 		#include "LED/LED.h"
