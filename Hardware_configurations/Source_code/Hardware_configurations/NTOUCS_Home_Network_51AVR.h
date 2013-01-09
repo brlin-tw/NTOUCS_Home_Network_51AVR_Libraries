@@ -147,6 +147,8 @@
 			#define int_pri_ext0_enable PX0
 		
 		/* 華凌光電 WINSTAR WH1602B-NBA-JT 2 x 20 文字型液晶顯示螢幕(LCD) */
+			#define lcd P0
+			
 			/* 資料(LOGIC_HIGH)／指令(LOGIC_LOW)暫存器選擇訊號 */
 				sbit lcd_register_select = P2^0;
 			/* 資料讀取(LOGIC_HIGH)／寫入(LOGIC_LOW)控制訊號 */
