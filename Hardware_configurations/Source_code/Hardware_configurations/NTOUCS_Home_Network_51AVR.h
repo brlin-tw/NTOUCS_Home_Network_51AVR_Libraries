@@ -157,6 +157,15 @@
 				sbit lcd_read_write_bar = P2^1;
 			/* 螢幕對匯流排的連通控制訊號 */
 				sbit lcd_enable = P2^2;
+			/* 螢幕物理模式設定
+			   　8 位元
+				 　　DL = 1 
+				 　5 x 7 pixel matrix
+				 　　F = 0 
+				 　雙行
+				 　　N = 1
+				 　001110xxb */
+				#define LCD_PHYSICAL_MODE 0x38
 				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
