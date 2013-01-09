@@ -15,8 +15,8 @@ NTOUCS_Home_Network_51AVR.c
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
-	void disableAllUnit(
-		/* 停用所有元件輸出的函式 */
+	void initializeSystem(
+		/* 初始化系統，初始化／停用所有元件 */
 			void){
 		/* 關閉 LED 顯示 */
 			led = 0xFF;

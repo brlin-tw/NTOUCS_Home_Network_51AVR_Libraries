@@ -170,8 +170,8 @@
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
-		void disableAllUnit(
-			/* 停用所有元件輸出的函式 */
+		void initializeSystem(
+			/* 初始化系統，初始化／停用所有元件 */
 				void);
 
 	/*||||| 全域變數 | Global Variables |||||*/
