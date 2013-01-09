@@ -155,7 +155,7 @@
 					#define LED_REG_DATA LOGIC_HIGH;
 			/* 資料讀取(LOGIC_HIGH)／寫入(LOGIC_LOW)控制訊號 */
 				sbit lcd_read_write_bar = P2^1;
-			/* 螢幕啟動訊號 */
+			/* 螢幕對匯流排的連通控制訊號 */
 				sbit lcd_enable = P2^2;
 				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
