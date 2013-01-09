@@ -71,7 +71,7 @@
 		/* 7 段顯示器 */
 			#define seven_seg P0
 			/* 7 段顯示器的數位數量 */
-			#define SEVEN_SEG_DIGIT_NO 4
+				#define SEVEN_SEG_DIGIT_NO 4
 			/* Renesas(Hitachi) HD74LS373P 控制訊號 */
 				sbit seven_seg_latch_position_enable = P2^3;
 				sbit seven_seg_latch_font_enable = P2^4;
