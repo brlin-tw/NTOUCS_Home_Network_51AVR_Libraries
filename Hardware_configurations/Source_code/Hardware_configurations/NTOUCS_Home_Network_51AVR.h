@@ -166,6 +166,11 @@
 				 　　N = 1
 				 　001110xxb */
 				#define LCD_PHYSICAL_MODE 0x38
+			/* duration of lcd writing instruction */
+				#define LCD_WRITE_TIME 10
+				
+			/* duration of lcd clearing screen */
+				#define LCD_CLEAR_TIME 255
 				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
