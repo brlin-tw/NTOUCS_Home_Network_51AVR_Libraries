@@ -59,6 +59,7 @@
 			sbit BTN_SW6 = P3^5;
 			
 			#define BTN_SW_PRESSED LOGIC_LOW
+			#define BTN_SW_CLICK_DELAY 5000
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
