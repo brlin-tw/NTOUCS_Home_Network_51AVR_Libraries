@@ -28,6 +28,9 @@
 
 /* for ADC definitions */
 	#include "ADC/ADC.h"
+
+/* for 7-seg definitions */
+	#include "Seven_segment_display/Seven_segment_display.h"
 	
 /* test target */
 	#include "Button_switch/Button_switch.h"
@@ -40,6 +43,7 @@
 	/* 測試函式 */
 		void testButtonIsPressed(void);
 		void testButton3andADC(void);
+		void testButtonDelay(void);
 		
 /*||||| 全域變數 | Global Variables |||||*/
 
@@ -51,8 +55,11 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
+#if 0
 		testButtonIsPressed();
 		testButton3andADC();
+#endif
+		testButtonDelay();
 		ledDisplayValue(LED_ALL);
 		hangForever();
 	}
@@ -91,5 +98,23 @@ void testButtonIsPressed(void){
 void testButton3andADC(void){
 	
 	
+	return;
+}
+
+void testButtonDelay(void){
+	unsigned int t_count = 0;
+	
+	while(button_swIsPressed(BTN_SW5) == FALSE){
+		while(button_swIsPressed(BTN_SW6) == TRUE){
+			if(t_count < 9999){
+				t_count++;
+			}
+		}
+		if(t_count > 0){
+			delayDoing(65535, seven_segmentDisplayDecimal, t_count);
+			seven_segmentDisable();
+			t_count = 0;
+		}
+	}
 	return;
 }

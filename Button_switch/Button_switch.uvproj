@@ -466,6 +466,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Seven_segment_display</GroupName>
+          <Files>
+            <File>
+              <FileName>Seven_segment_display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source_code\Seven_segment_display\Seven_segment_display.c</FilePath>
+            </File>
+            <File>
+              <FileName>Seven_segment_display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Seven_segment_display\Seven_segment_display.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
