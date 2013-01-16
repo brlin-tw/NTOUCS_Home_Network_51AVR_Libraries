@@ -40,6 +40,15 @@
 		/* 8 位元 LED
 			 　連接至 W78E58B 的 P1 連接埠*/
 			#define led P1
+				/* 個別 led */
+					sbit led0 = led^0;
+					sbit led1 = led^1;
+					sbit led2 = led^2;
+					sbit led3 = led^3;
+					sbit led4 = led^4;
+					sbit led5 = led^5;
+					sbit led6 = led^6;
+					sbit led7 = led^7;
 				/* led 電位為何才會讓燈亮？ */
 					#define LED_LIT LOGIC_LOW
 			
