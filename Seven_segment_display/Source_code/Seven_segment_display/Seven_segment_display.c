@@ -113,10 +113,8 @@ Seven_segment_display.c
 				seven_segmentWritePosition(seven_segment_scan_position[i]);
 				/* 等數位掃描電路切換 */
 					delay(SEVEN_SEGMENT_SCAN_DELAY);
-				
 				value /= 10;
 			}
-			
 		return;
 	}
 	
@@ -134,9 +132,7 @@ Seven_segment_display.c
 				seven_segmentWritePosition(seven_segment_scan_position[i]);
 				/* 等數位掃描電路切換 */
 					delay(SEVEN_SEGMENT_SCAN_DELAY);
-				
 				value /= 16;
 			}
-			
 		return;
 	}
