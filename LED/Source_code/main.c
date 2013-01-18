@@ -20,6 +20,9 @@ main.c
 	
 /* hang procedure */
 	#include "Flow_of_control/Hang.h"
+
+/* for TMR_CTR definition */
+	#include "Timer_or_counter/Timer_or_counter.h"
 	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
@@ -33,6 +36,7 @@ main.c
 		void testLEDposition(void);
 		void testLEDpattern(void);
 		void testLEDrotate(void);
+		void testLEDblinking(void);
 		
 /*||||| 全域變數 | Global Variables |||||*/
 
@@ -44,9 +48,12 @@ void main(void){
 	
 	/* main loop */
 	while(TRUE){
+#if 0
 		testLEDpattern();
 		testLEDposition();
 		testLEDrotate();
+#endif
+		testLEDblinking();
 		
 		hangForever();
 	}
@@ -99,5 +106,12 @@ void testLEDrotate(void){
 	delay(20000);
 	ledDisable();
 	
+	return;
+}
+
+void testLEDblinking(void){
+	ledBlinkSecond(TMR_CTR0, 1);
+	ledBlinkSecond(TMR_CTR0, 1);
+	ledBlinkSecond(TMR_CTR0, 1);
 	return;
 }

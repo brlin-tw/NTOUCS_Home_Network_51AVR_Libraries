@@ -9,7 +9,9 @@ LED.c
 		/* for C true */
 	/* Target device configurations */
 		#include "../Hardware_configurations/NTOUCS_Home_Network_51AVR.h"
-
+	/* Flow_of_control */
+		#include "../Flow_of_control/Flow_of_control.h"
+		
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
@@ -38,9 +40,9 @@ void ledRotateOneWay(
 		/* 目前 LED 位置 */
 	bit direction
 		/* 輪動方向 */, 
-	void (*delay)(unsigned)
+	void (*delay)(unsigned int)
 		/* 用來當作輪動周期的時間延遲函式 */, 
-	unsigned interval
+	unsigned int interval
 		/* 輪動週期（從一個 LED 跳到下一個 LED 的 tick 數）*/ ){
 	
 	/* rotate to last bit */
@@ -66,9 +68,9 @@ void ledRotateTwoWay(
 	/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
 	bit initial_direction
 		/* 第一次輪轉的轉動方向 */, 
-	void (*delay)(unsigned)
+	void (*delay)(unsigned int)
 		/* 用來當作輪動周期的時間延遲函式 */, 
-	unsigned interval
+	unsigned int interval
 		/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */){
 	ledRotateOneWay(
 		(initial_direction == LED_ROTATE_UP) ? 
@@ -88,6 +90,18 @@ void ledRotateTwoWay(
 void ledDisable(
 	/* 關閉 LED 顯示 */
 	void){
+	ledDisplayValue(LED_NONE);
+	return;
+}
+
+void ledBlinkSecond(
+	/* 讓 LED 亮一下再熄掉 */
+	bit timer
+		/* 用來計時的計時器 */, 
+	unsigned char interval
+		/* 亮一下的時間 */){
+	ledDisplayValue(LED_ALL);
+	delaySecond(timer, interval);
 	ledDisplayValue(LED_NONE);
 	return;
 }

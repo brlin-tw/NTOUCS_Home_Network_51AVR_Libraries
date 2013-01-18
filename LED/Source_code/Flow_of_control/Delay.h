@@ -36,15 +36,50 @@
 	/*||||| 函式雛型 | Function Prototypes |||||*/
 	/* 單純的倒數產生時間延遲的函式
 	   　time
-		 　　延遲時距
+		 　　延遲時距（單位：while 迴圈一次運行的時間）
+		 　堆疊記憶體使用量：約 16 位元
 	*/
 	void delay(unsigned int time);
+			
+	void delay8bit(
+		/* 單純的倒數產生時間延遲的函式（8 位元版本）
+			 堆疊記憶體使用量：約 8 位元 */
+		unsigned char time
+			/* 延遲時距（最長可計時 255 個 for 迴圈周期） */);
 	
-	/* 延遲（秒） （尚未實作）
-	   　time
-		 　　延遲時距
-	
-	void delaySecond(unsigned int time);*/
+	void delaySecond(
+		/* 延遲（單位：秒） */
+		bit timer, 
+			/* 用來計時的 timer */
+		unsigned char time
+			/* 延遲時距（最多可計時 255 秒） */);
+		
+	void delayDoing(
+		/* 延遲並於該時段中持續不斷地執行特定功能
+		   已知問題：與７段顯示器的 seven_segmentDisplay*() 合併使用會發生記憶體竄改，請參閱 Issue #7 */
+		unsigned int time, 
+		void (*doing)(unsigned int param1), 
+		unsigned int param1);
+
+	void delaySecondDoing(
+		/* 延遲（單位：秒）並於該時段中持續不斷地執行特定功能
+		   已知問題：與７段顯示器的 seven_segmentDisplay*() 合併使用會發生記憶體竄改，請參閱 Issue #7 */
+		bit timer, 
+			/* 用來計時的 timer */
+		unsigned char time
+			/* 延遲時距（最大計時 255 秒） */, 
+		void (*doing)(unsigned int param1), 
+		unsigned int param1);
+			
+	void delayOne16thSecondDoing(
+		/* 延遲（單位：1/16秒）並於該時段中持續不斷地執行特定功能 */
+		bit timer
+			/* 用來計時的 timer */, 
+		unsigned char time
+			/* 延遲時距（最大計時 255/16 = 15.* 秒） */, 
+		void (*doing)(unsigned int param1), 
+		unsigned int param1);
+		
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus

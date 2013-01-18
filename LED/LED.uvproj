@@ -421,6 +421,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Timer_or_counter</GroupName>
+          <Files>
+            <File>
+              <FileName>Timer_or_counter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source_code\Timer_or_counter\Timer_or_counter.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer_or_counter.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source_code\Timer_or_counter\Timer_or_counter.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

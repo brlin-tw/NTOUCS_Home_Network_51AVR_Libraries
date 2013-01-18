@@ -95,9 +95,9 @@
 					/* 初始位置 */, 
 				bit direction
 					/* 輪動方向 */, 
-				void (*delay)(unsigned)
+				void (*delay)(unsigned int)
 					/* 用來當作輪動周期的時間延遲函式 */, 
-				unsigned interval
+				unsigned int interval
 					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間）
   					 會直接傳遞給 *delay(interval) */
 			);
@@ -105,12 +105,20 @@
 				/* 讓 LED 從一邊亮到另外一邊...再亮回來 */
 				bit initial_direction
 					/* 第一次輪轉的轉動方向 */, 
-				void (*delay)(unsigned)
+				void (*delay)(unsigned int)
 					/* 用來當作輪動周期的時間延遲函式 */, 
-				unsigned interval
+				unsigned int interval
 					/* 輪動週期（從一個 LED 跳到下一個 LED 的時間） */
 			);
 				
+		void ledBlinkSecond(
+			/* 讓 LED 亮一下再熄掉 */
+			bit timer
+				/* 用來計時的計時器 */, 
+			unsigned char interval
+				/* 亮一下的時間 */
+		);
+		
 	/*||||| 全域變數 | Global Variables |||||*/
 		/* 讓 LED 位置可以直接透過陣列索引值變數取得 */
 			extern code unsigned char led_position[8];
