@@ -74,6 +74,14 @@
 				
 		/* DIP 封裝指撥開關 */
 			#define DIP_SW P0
+			sbit DIP_SW1 DIP_SW^0;
+			sbit DIP_SW2 DIP_SW^1;
+			sbit DIP_SW3 DIP_SW^2;
+			sbit DIP_SW4 DIP_SW^3;
+			sbit DIP_SW5 DIP_SW^4;
+			sbit DIP_SW6 DIP_SW^5;
+			sbit DIP_SW7 DIP_SW^6;
+			sbit DIP_SW8 DIP_SW^7;			
 			sbit dip_sw_chip_enable_bar = P2^5;
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
 			#define DIP_SW_ON LOGIC_LOW
