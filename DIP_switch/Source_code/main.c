@@ -21,28 +21,70 @@
 	
 /* LED */
 	#include "LED/LED.h"
+
+/* FLOW */
+	#include "Flow_of_control/Flow_of_control.h"
+	
+/* Timer_or_counter */
+	#include "Timer_or_counter/Timer_or_counter.h"
+	
+/* 按鈕開關 */
+	#include "Button_switch/Button_switch.h"
 	
 /*||||| 常數與巨集 | Constants & Macros |||||*/
 
 /*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 /*||||| 函式雛型 | Function Prototypes |||||*/
-
+	void testDIP_SWgetValue(void);
+	void testDIP_SWisOn(void);
+	
 /*||||| 全域變數 | Global Variables |||||*/
 
 /*||||| 主要程式碼 | Main Code |||||*/
 /* 程式進入點 | Program entry point
    　因為嵌入式系統開機之後就會執行到電源關閉，故不需要回傳值*/
 void main(void){
-	disableAllUnit();
+	initializeSystem();
 	
 	/* main loop */
 	while(TRUE){
-		dip_swEnable();
-		ledDisplayValue(dip_swGetValue());
-		dip_swDisable();
+		testDIP_SWgetValue();
+		
+		ledDisplayValue(LED_ALL);
+		delaySecond(TMR_CTR0, 1);
+		ledDisplayValue(LED_NONE);
+		
+		testDIP_SWisOn();
+		
+		ledDisplayValue(LED_ALL);
+		hangForever();
 	}
 	
 	return;
 }
 
+void testDIP_SWgetValue(void){
+	while(button_swIsPressed(BTN_SW6) == FALSE){
+		dip_swEnable();
+		ledDisplayValue(dip_swGetValue());
+		dip_swDisable();
+	}
+	return;
+}
+
+void testDIP_SWisOn(void){
+	while(button_swIsPressed(BTN_SW6) == FALSE){
+		dip_swEnable();
+		switch ((unsigned char)dip_swIsOn(DIP_SW8)){
+		case TRUE:
+			ledDisplayValue(D8);
+			break;
+		case FALSE:
+			ledDisplayValue(LED_NONE);
+			break;
+		}
+		dip_swDisable();
+	}
+	return;
+}

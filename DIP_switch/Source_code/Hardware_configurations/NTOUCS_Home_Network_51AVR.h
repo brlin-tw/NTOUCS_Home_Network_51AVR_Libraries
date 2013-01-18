@@ -40,6 +40,15 @@
 		/* 8 位元 LED
 			 　連接至 W78E58B 的 P1 連接埠*/
 			#define led P1
+				/* 個別 led */
+					sbit led0 = led^0;
+					sbit led1 = led^1;
+					sbit led2 = led^2;
+					sbit led3 = led^3;
+					sbit led4 = led^4;
+					sbit led5 = led^5;
+					sbit led6 = led^6;
+					sbit led7 = led^7;
 				/* led 電位為何才會讓燈亮？ */
 					#define LED_LIT LOGIC_LOW
 			
@@ -53,27 +62,34 @@
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
-			sbit adc_chip_select_bar_read_bar = P2^6;
-				/* 開啟 ADC 至 bus 輸出的訊號 */
+			/* 開啟 ADC 至 bus 輸出的訊號 */
+				sbit adc_chip_select_bar_read_bar = P2^6;
+				sbit adc_chip_select_bar = P2^6;
+				sbit adc_read_bar = P2^6;
+			/* 啟用 ADC 轉換的訊號 */
+				sbit adc_write_bar = P3^2;
+			/* 如果轉換完成 ADC 會將此信號設定為 LOGIC_LOW */
+				sbit ADC_INTERRUPT_BAR = P3^2;
 				
 		/* DIP 封裝指撥開關 */
 			#define DIP_SW P0
+			sbit DIP_SW1 = DIP_SW^0;
+			sbit DIP_SW2 = DIP_SW^1;
+			sbit DIP_SW3 = DIP_SW^2;
+			sbit DIP_SW4 = DIP_SW^3;
+			sbit DIP_SW5 = DIP_SW^4;
+			sbit DIP_SW6 = DIP_SW^5;
+			sbit DIP_SW7 = DIP_SW^6;
+			sbit DIP_SW8 = DIP_SW^7;
+			
 			sbit dip_sw_chip_enable_bar = P2^5;
 				/* 開啟 DIP 開關至 bus 輸出的訊號 */
 			#define DIP_SW_ON LOGIC_LOW
 			
-		/* 液晶螢幕(LCD) */
-			sbit lcd_enable = P2^2;
-				/* 啟用 LCD 訊號 */
-			sbit lcd_register_select = P2^0;
-				/* LCD 暫存器選擇信號 */
-			sbit lcd_read_write_bar = P2^1;
-				/* LCD 暫存器讀寫 */	
-		
 		/* 7 段顯示器 */
 			#define seven_seg P0
 			/* 7 段顯示器的數位數量 */
-			#define SEVEN_SEG_DIGIT_NO 4
+				#define SEVEN_SEG_DIGIT_NO 4
 			/* Renesas(Hitachi) HD74LS373P 控制訊號 */
 				sbit seven_seg_latch_position_enable = P2^3;
 				sbit seven_seg_latch_font_enable = P2^4;
@@ -135,8 +151,8 @@
 			
 			#define int_serial_uart_enable ES
 			
-			#define int_ext1_enable_bar EX1
-			#define int_ext0_enable_bar EX0
+			#define int_ext1_enable EX1
+			#define int_ext0_enable EX0
 			
 		/* Interrupt Priority(IP) register */
 			#define int_pri_tmr_ctr2_enable PT2
@@ -145,14 +161,40 @@
 			
 			#define int_pri_serial_uart_enable PS
 			
-			#define int_pri_ext1_enable_bar PX1
-			#define int_pri_ext0_enable_bar PX0
+			#define int_pri_ext1_enable PX1
+			#define int_pri_ext0_enable PX0
+		
+		/* 華凌光電 WINSTAR WH1602B-NBA-JT 2 x 20 文字型液晶顯示螢幕(LCD) */
+			#define lcd P0
 			
+			/* 資料(LOGIC_HIGH)／指令(LOGIC_LOW)暫存器選擇訊號 */
+				sbit lcd_register_select = P2^0;
+					#define LCD_REG_INSTRUCTION LOGIC_LOW;
+					#define LCD_REG_DATA LOGIC_HIGH;
+			/* 資料讀取(LOGIC_HIGH)／寫入(LOGIC_LOW)控制訊號 */
+				sbit lcd_read_write_bar = P2^1;
+			/* 螢幕對匯流排的連通控制訊號 */
+				sbit lcd_enable = P2^2;
+			/* 螢幕物理模式設定
+			   　8 位元
+				 　　DL = 1 
+				 　5 x 7 pixel matrix
+				 　　F = 0 
+				 　雙行
+				 　　N = 1
+				 　001110xxb */
+				#define LCD_PHYSICAL_MODE 0x38
+			/* duration of lcd writing instruction */
+				#define LCD_WRITE_TIME 200
+				
+			/* duration of lcd clearing screen */
+				#define LCD_CLEAR_TIME 255
+				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
 	/*||||| 函式雛型 | Function Prototypes |||||*/
-		void disableAllUnit(
-			/* 停用所有元件輸出的函式 */
+		void initializeSystem(
+			/* 初始化系統，初始化／停用所有元件 */
 				void);
 
 	/*||||| 全域變數 | Global Variables |||||*/

@@ -42,6 +42,10 @@
 			void);
 		unsigned char dip_swGetValue(
 			/* 取得 DIP 封裝開關的數值 */);
+		bit dip_swIsOn(
+			/* 判斷特定開關是否為開 */
+			bit which);
+
 	/*||||| 全域變數 | Global Variables |||||*/
 	
 	#ifdef __cplusplus
