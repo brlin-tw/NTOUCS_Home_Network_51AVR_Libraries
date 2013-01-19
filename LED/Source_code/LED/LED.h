@@ -116,7 +116,7 @@
 			bit timer
 				/* 用來計時的計時器 */, 
 			unsigned char interval
-				/* 亮一下的時間 */
+				/* 亮一下的時間（單位：秒） */
 		);
 		
 	/*||||| 全域變數 | Global Variables |||||*/
