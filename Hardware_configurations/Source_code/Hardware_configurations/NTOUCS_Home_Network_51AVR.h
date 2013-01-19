@@ -164,7 +164,8 @@
 			#define int_pri_ext1_enable PX1
 			#define int_pri_ext0_enable PX0
 		
-		/* 華凌光電 WINSTAR WH1602B-NBA-JT 2 x 20 文字型液晶顯示螢幕(LCD) */
+		/* 華凌光電 WINSTAR WH1602B-NBA-JT 2 x 20 文字型液晶顯示螢幕(LCD) 
+		   (Sitronix ST7066 Dot Matrix LCD Controller/Driver) */
 			#define lcd P0
 			
 			/* 資料(LOGIC_HIGH)／指令(LOGIC_LOW)暫存器選擇訊號 */
