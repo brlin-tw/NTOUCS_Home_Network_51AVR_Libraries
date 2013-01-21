@@ -93,5 +93,20 @@ NTOUCS_Home_Network_51AVR.c
 		/* 停用計時器(timer)／計數器(counter) */
 			tmr_ctr1_run = LOGIC_LOW;
 			tmr_ctr0_run = LOGIC_LOW;
+
+		/* prompt */{
+			for(shared_i = 0, led = 0x55; BTN_SW4 != BTN_SW_PRESSED; ++shared_i){
+				if(shared_i == 12345){
+					shared_i = 0;
+					led = ~led;
+				}
+			}
+			led = 0xff;
+			shared_i = BTN_SW_CLICK_DELAY;
+			while(shared_i != 0){
+				/* do nothing */;
+				--shared_i;
+			}
+		}
 		return;
 	}
