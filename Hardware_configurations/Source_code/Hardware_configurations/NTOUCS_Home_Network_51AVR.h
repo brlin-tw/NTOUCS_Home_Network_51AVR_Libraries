@@ -59,7 +59,7 @@
 			sbit BTN_SW6 = P3^5;
 			
 			#define BTN_SW_PRESSED LOGIC_LOW
-			#define BTN_SW_CLICK_DELAY 5000
+			#define BTN_SW_CLICK_DELAY 10000
 			
 		/* 類比→數位轉換器(ADC) */
 			#define ADC P0
@@ -174,6 +174,8 @@
 					#define LCD_REG_DATA LOGIC_HIGH;
 			/* 資料讀取(LOGIC_HIGH)／寫入(LOGIC_LOW)控制訊號 */
 				sbit lcd_read_write_bar = P2^1;
+			/* LCD 忙碌 flag */
+				sbit lcd_busy = P0^7;
 			/* 螢幕對匯流排的連通控制訊號 */
 				sbit lcd_enable = P2^2;
 			/* 螢幕物理模式設定
@@ -185,11 +187,11 @@
 				 　　N = 1
 				 　001110xxb */
 				#define LCD_PHYSICAL_MODE 0x38
-			/* duration of lcd writing instruction */
-				#define LCD_WRITE_TIME 10
+			/* duration of lcd instruction operation(40μs) */
+				#define LCD_INST_GENERIC_TIME 0
 				
-			/* duration of lcd clearing screen */
-				#define LCD_CLEAR_TIME 255
+			/* duration of lcd clearing screen(1640μs) */
+				#define LCD_INST_CLEAR_TIME 1640
 				
 	/*||||| Definition of data type, enumeration, data structure and class |||||*/
 
